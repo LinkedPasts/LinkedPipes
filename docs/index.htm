@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Title of the document</title>
+</head>
+
+<body>
+Content of the document......
+</body>
+<script src="https://www1.rgzm.de/kur2/js/jquery/jquery-1.12.1.js"></script>
+<script>
+let STORE = "https://services.mainzed.org/littleminions/sparql";
+let query = "SELECT * WHERE { ?s ?p ?o. } LIMIT 50";
+let queryStore = function(query, callback) {
+        $.ajax({
+            url: STORE,
+            dataType: 'jsonp',
+            type: 'GET',
+            data: {
+                queryLn: 'SPARQL',
+                query: "PREFIX wdt: <" + "http://www.wikidata.org/prop/direct/" + "> " + query,
+                Accept: 'application/json'
+            },
+            success: function(data) {
+                var bindings = data.results.bindings;
+                for (var i in bindings) {
+                    for (var j in bindings[i]) {
+                        if (bindings[i][j].value)
+                            bindings[i][j] = bindings[i][j].value;
+                    }
+                }
+                callback(bindings);
+            },
+            error: function(data) {
+                console.log("Es ist ein Fehler aufgetreten: " + data);
+                callback([]);
+            }
+        });
+    };
+    queryStore(query,console.log)
+</script>
+</html>
