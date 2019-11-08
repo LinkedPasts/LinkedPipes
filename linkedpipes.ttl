@@ -3,6 +3,7 @@
 # Credits: Linked Pasts Community
 
 @prefix rset: <http://rsetools.squirrel.link#> .
+@prefix pipe: <http://linkedpipes.xyz/pipes#> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix wdt: <http://www.wikidata.org/prop/direct/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -11,6 +12,7 @@
 # Alligator Tool
 wd:Q74004218 a rset:Tool.
 wd:Q74004218 rset:name "Alligator".
+wd:Q74004218 rset:description "An ontology and web app for transforming a correspondence analyses with fixed and floating time intervals to a relative chronology and RDF representation using Allen's interval algebra.".
 wd:Q74004218 rset:author "Florian Thiery, Allard Mees, RGZM".
 wd:Q74004218 rset:link <https://rgzm.github.io/alligator>.
 wd:Q74004218 rset:gitrepository <https://github.com/RGZM/alligator>.
@@ -28,6 +30,7 @@ wd:Q74004218 rset:acvitive "true".
 # Academic Meta Tool
 wd:Q74003194 a rset:Tool.
 wd:Q74003194 rset:name "Academic Meta Tool".
+wd:Q74004218 rset:description "An ontology and webapp for modelling vagueness in graphs including reasoning.".
 wd:Q74003194 rset:author "Florian Thiery, Martin Unold, RGZM, i3mainz, mainzed".
 wd:Q74003194 rset:link <http://academic-meta-tool.xyz>.
 wd:Q74003194 rset:gitrepository <https://github.com/search?q=topic%3Aacademicmetatool+org%3Amainzed+fork%3Atrue>.
@@ -46,6 +49,7 @@ wd:Q74003194 rset:acvitive "true".
 # SPARQLing Unicorn QGIS Plugin
 wd:Q74005133 a rset:Tool.
 wd:Q74005133 rset:name "SPARQLing Unicorn QGIS Plugin".
+wd:Q74004218 rset:description "Plugin to add a layer in QGIS from Linked Data SPARQL endpoints.".
 wd:Q74005133 rset:author "Florian Thiery, Timo Homburg, mainzed, Research Squirrel Engineers".
 wd:Q74005133 rset:link <https://plugins.qgis.org/plugins/sparqlunicorn/>.
 wd:Q74005133 rset:gitrepository <https://github.com/sparqlunicorn/sparqlunicornGoesGIS>.
@@ -59,4 +63,30 @@ wd:Q74005133 rset:outputFormat rset:SHP.
 wd:Q74005133 rset:outputFormat rset:GEOJSON.
 wd:Q74005133 rset:acvitive "true".
 
+#Relative Chronology Pipe
+_:0001 a rset:Pipe.
+_:0001 rset:name "Relative Chronology Pipe".
+_:0001 rset:description "Pipe to create a relative chronology with time reasoning".
+_:0001 rset:author "Florian Thiery, Allard Mees".
+_:0001 rset:dateOfEntry "08/11/2019".
+_:0002 rset:next _:0002.
+_:0002 a rset:PipeStep.
+_:0002 rset:pipeState rset:start.
+_:0002 rset:uses wd:Q74004218.
+_:0002 rset:hasInput _:0003.
+_:0003 a rset:PipeObject.
+_:0003 rset:description "CSV results of a CA".
+_:0002 rset:hasOutput _:0004.
+_:0004 a rset:PipeObject.
+_:0004 rset:description "relative Chronology (Allen Interval)".
+_:0002 rset:next _:0005.
+_:0005 a rset:PipeStep.
+_:0005 rset:pipeState rset:end.
+_:0005 rset:uses wd:Q74003194.
+_:0005 rset:hasInput _:0006.
+_:0006 a rset:PipeObject.
+_:0006 rset:description "relative Chronology (Allen Interval)".
+_:0005 rset:hasOutput _:0007.
+_:0007 a rset:PipeObject.
+_:0007 rset:description "RDF with time reasoning".
 
