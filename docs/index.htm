@@ -19,7 +19,10 @@ let queryStore = function(query, callback) {
             type: 'GET',
             data: {
                 queryLn: 'SPARQL',
-                query: "PREFIX wdt: <" + "http://www.wikidata.org/prop/direct/" + "> " + query,
+                query: "PREFIX rset: <http://rsetools.squirrel.link#> " +
+                "PREFIX pipe: <http://linkedpipes.xyz/pipes#> " +
+                "PREFIX wd: <http://www.wikidata.org/entity/> " +
+                "PREFIX wdt: <http://www.wikidata.org/prop/direct/> " + query,
                 Accept: 'application/json'
             },
             success: function(data) {
@@ -38,6 +41,7 @@ let queryStore = function(query, callback) {
             }
         });
     };
-    queryStore(query,console.log)
+    let query1 = "SELECT * WHERE { ?s a rset:Tool. ?s ?p ?o. }";
+    queryStore(query1,console.log)
 </script>
 </html>
