@@ -1,0 +1,62 @@
+# Linked Pipes Repository
+# License: http://creativecommons.org/licenses/by/4.0/
+# Credits: Linked Pasts Community
+
+@prefix rset: <http://rsetools.squirrel.link#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+# Alligator Tool
+wd:Q74004218 a rset:Tool.
+wd:Q74004218 rset:name "Alligator".
+wd:Q74004218 rset:author "Florian Thiery, Allard Mees, RGZM".
+wd:Q74004218 rset:link <https://rgzm.github.io/alligator>.
+wd:Q74004218 rset:gitrepository <https://github.com/RGZM/alligator>.
+wd:Q74004218 rset:dateOfEntry "08/11/2019".
+wd:Q74004218 rset:toolState rset:published.
+wd:Q74004218 rset:entryLevel rset:advanced.
+wd:Q74004218 rset:consumesLOD "false".
+wd:Q74004218 rset:producesLOD "true".
+wd:Q74004218 rset:inputFormat rset:CSV.
+wd:Q74004218 rset:outputFormat rset:CSV.
+wd:Q74004218 rset:outputFormat rset:TTL.
+wd:Q74004218 rset:outputFormat rset:HTML.
+wd:Q74004218 rset:acvitive "true".
+
+# Academic Meta Tool
+wd:Q74003194 a rset:Tool.
+wd:Q74003194 rset:name "Academic Meta Tool".
+wd:Q74003194 rset:author "Florian Thiery, Martin Unold, RGZM, i3mainz, mainzed".
+wd:Q74003194 rset:link <http://academic-meta-tool.xyz>.
+wd:Q74003194 rset:gitrepository <https://github.com/search?q=topic%3Aacademicmetatool+org%3Amainzed+fork%3Atrue>.
+wd:Q74003194 rset:dateOfEntry "08/11/2019".
+wd:Q74003194 rset:toolState rset:published.
+wd:Q74003194 rset:entryLevel rset:beginner.
+wd:Q74003194 rset:consumesLOD "false".
+wd:Q74003194 rset:producesLOD "true".
+wd:Q74003194 rset:inputFormat rset:JSON.
+wd:Q74003194 rset:outputFormat rset:CSV.
+wd:Q74003194 rset:outputFormat rset:TTL.
+wd:Q74003194 rset:outputFormat rset:HTML.
+wd:Q74003194 rset:outputFormat rset:CYPHER.
+wd:Q74003194 rset:acvitive "true".
+
+# SPARQLing Unicorn QGIS Plugin
+wd:Q74005133 a rset:Tool.
+wd:Q74005133 rset:name "SPARQLing Unicorn QGIS Plugin".
+wd:Q74005133 rset:author "Florian Thiery, Timo Homburg, mainzed, Research Squirrel Engineers".
+wd:Q74005133 rset:link <https://plugins.qgis.org/plugins/sparqlunicorn/>.
+wd:Q74005133 rset:gitrepository <https://github.com/sparqlunicorn/sparqlunicornGoesGIS>.
+wd:Q74005133 rset:dateOfEntry "08/11/2019".
+wd:Q74005133 rset:toolState rset:published.
+wd:Q74005133 rset:entryLevel rset:beginner.
+wd:Q74005133 rset:consumesLOD "true".
+wd:Q74005133 rset:producesLOD "true".
+wd:Q74005133 rset:inputFormat rset:SPARQL.
+wd:Q74005133 rset:outputFormat rset:SHP.
+wd:Q74005133 rset:outputFormat rset:GEOJSON.
+wd:Q74005133 rset:acvitive "true".
+
+
