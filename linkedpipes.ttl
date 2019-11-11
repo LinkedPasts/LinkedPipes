@@ -11,7 +11,7 @@
 
 # Alligator Tool
 wd:Q74004218 a rset:Tool.
-wd:Q74003194 a rset:LinkedTool.
+wd:Q74004218 a rset:LinkedTool.
 wd:Q74004218 rset:name "Alligator".
 wd:Q74004218 rset:description "An ontology and web app for transforming a correspondence analyses with fixed and floating time intervals to a relative chronology and RDF representation using Allen's interval algebra.".
 wd:Q74004218 rset:link <https://rgzm.github.io/alligator>.
@@ -28,7 +28,7 @@ wd:Q74004218 rset:outputFormat rset:HTML.
 wd:Q74003194 a rset:Tool.
 wd:Q74003194 a rset:LinkedTool.
 wd:Q74003194 rset:name "Academic Meta Tool".
-wd:Q74004218 rset:description "An ontology and webapp for modelling vagueness in graphs including reasoning.".
+wd:Q74003194 rset:description "An ontology and webapp for modelling vagueness in graphs including reasoning.".
 wd:Q74003194 rset:link <http://academic-meta-tool.xyz>.
 wd:Q74003194 rset:dateOfEntry "08/11/2019".
 wd:Q74003194 rset:entryLevel rset:beginner.
@@ -42,9 +42,9 @@ wd:Q74003194 rset:outputFormat rset:CYPHER.
 
 # SPARQLing Unicorn QGIS Plugin
 wd:Q74005133 a rset:Tool.
-wd:Q74003194 a rset:LinkedTool.
+wd:Q74005133 a rset:LinkedTool.
 wd:Q74005133 rset:name "SPARQLing Unicorn QGIS Plugin".
-wd:Q74004218 rset:description "Plugin to add a layer in QGIS from Linked Data SPARQL endpoints.".
+wd:Q74005133 rset:description "Plugin to add a layer in QGIS from Linked Data SPARQL endpoints.".
 wd:Q74005133 rset:link <https://plugins.qgis.org/plugins/sparqlunicorn/>.
 wd:Q74005133 rset:dateOfEntry "08/11/2019".
 wd:Q74005133 rset:entryLevel rset:beginner.
