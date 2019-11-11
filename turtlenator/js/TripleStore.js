@@ -5,7 +5,7 @@ TS.SPARQLQUERY_WIKIDATA = "https://query.wikidata.org/sparql";
 TS.SPARQLQUERY_WIKIDATA_ENTITY = "https://www.wikidata.org/wiki/Special:EntityData/{ENTITY}.json";
 
 TS.PREFIXES =
-    "PREFIX rset: <http://rsetools.squirrel.link#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> ";
+    "PREFIX rset: <http://rsetools.squirrel.link#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX pipe: <http://linkedpipes.xyz/pipes#>";
 
 TS.query = (sparql, callback) => {
     setTimeout(function() {

@@ -14,8 +14,6 @@ let initModalCreateTool = (result) => {
     $("#btn-modalCreateTool").on('click', () => {
         createToolTTL();
         copyToClipboard('#hiddenclipboard');
-        //let modal = document.getElementById('modalCreateTool');
-        //modal.style.display = "none";
     });
 };
 
@@ -23,17 +21,16 @@ let initModalCreatePipe = (result) => {
     let modal = document.getElementById('modalCreatePipe');
     let btn = document.getElementById("btn-create-pipe");
     btn.onclick = function() {
-        //$("#inp-invno").val("");
-        //$("#inp-label").val("");
+        TS.query("SELECT * WHERE { ?s a rset:LinkedTool. ?s rset:name ?label.} ORDER BY ASC(?label)", fillPipeTools);
+        TS.query("SELECT * WHERE { ?s a rset:PipeState. ?s rdfs:label ?label.} ORDER BY ASC(?label)", fillPipeStates);
         modal.style.display = "block";
     }
     $("#btn-modal-create-pipe-close").click(function() {
         modal.style.display = "none";
     });
     $("#btn-modalCreatePipe").on('click', () => {
-        //RDF4J.createObject(UUID.getUUIDv4(), $("#inp-invno").val(), $("#inp-label").val(), $("#inp-thumbnail").val(), $("#sel-objecttype option:selected").val(), openModalSaveResponse);
-        let modal = document.getElementById('modalCreatePipe');
-        //modal.style.display = "none";
+        createPipeTTL();
+        copyToClipboardP('#hiddenclipboardp');
     });
 };
 
@@ -177,8 +174,113 @@ let fillWikidataEntity = (response) => {
     $("#inp-wikidata").css("background-color", "LIGHTGREEN");
 };
 
+let fillPipeTools = (response) => {
+    $("#sel-pipetool1").html("");
+    $("#sel-pipetool1").append(new Option("", -1));
+    let values = response.results.bindings;
+    for (item in values) {
+        let uri = values[item].s.value.replace("http://www.wikidata.org/entity/", "wd:");
+        let label = values[item].label.value;
+        let opt = $(new Option(label, uri));
+        opt.attr("uri", uri.replace("http://www.wikidata.org/entity/", "wd:")).attr("label", label);
+        $("#sel-pipetool1").append(opt);
+    }
+    $("#sel-pipetool2").html("");
+    $("#sel-pipetool2").append(new Option("", -1));
+    for (item in values) {
+        let uri = values[item].s.value.replace("http://www.wikidata.org/entity/", "wd:");
+        let label = values[item].label.value;
+        let opt = $(new Option(label, uri));
+        opt.attr("uri", uri.replace("http://www.wikidata.org/entity/", "wd:")).attr("label", label);
+        $("#sel-pipetool2").append(opt);
+    }
+    $("#sel-pipetool3").html("");
+    $("#sel-pipetool3").append(new Option("", -1));
+    for (item in values) {
+        let uri = values[item].s.value.replace("http://www.wikidata.org/entity/", "wd:");
+        let label = values[item].label.value;
+        let opt = $(new Option(label, uri));
+        opt.attr("uri", uri.replace("http://www.wikidata.org/entity/", "wd:")).attr("label", label);
+        $("#sel-pipetool3").append(opt);
+    }
+    $("#sel-pipetool4").html("");
+    $("#sel-pipetool4").append(new Option("", -1));
+    for (item in values) {
+        let uri = values[item].s.value.replace("http://www.wikidata.org/entity/", "wd:");
+        let label = values[item].label.value;
+        let opt = $(new Option(label, uri));
+        opt.attr("uri", uri.replace("http://www.wikidata.org/entity/", "wd:")).attr("label", label);
+        $("#sel-pipetool4").append(opt);
+    }
+    $("#sel-pipetool5").html("");
+    $("#sel-pipetool5").append(new Option("", -1));
+    for (item in values) {
+        let uri = values[item].s.value.replace("http://www.wikidata.org/entity/", "wd:");
+        let label = values[item].label.value;
+        let opt = $(new Option(label, uri));
+        opt.attr("uri", uri.replace("http://www.wikidata.org/entity/", "wd:")).attr("label", label);
+        $("#sel-pipetool5").append(opt);
+    }
+};
+
+let fillPipeStates = (response) => {
+    $("#sel-pipestate1").html("");
+    $("#sel-pipestate1").append(new Option("", -1));
+    let values = response.results.bindings;
+    for (item in values) {
+        let uri = values[item].s.value;
+        let label = values[item].label.value;
+        let opt = $(new Option(label, uri));
+        opt.attr("uri", uri).attr("label", label);
+        $("#sel-pipestate1").append(opt);
+    }
+    $("#sel-pipestate2").html("");
+    $("#sel-pipestate2").append(new Option("", -1));
+    for (item in values) {
+        let uri = values[item].s.value;
+        let label = values[item].label.value;
+        let opt = $(new Option(label, uri));
+        opt.attr("uri", uri).attr("label", label);
+        $("#sel-pipestate2").append(opt);
+    }
+    $("#sel-pipestate3").html("");
+    $("#sel-pipestate3").append(new Option("", -1));
+    for (item in values) {
+        let uri = values[item].s.value;
+        let label = values[item].label.value;
+        let opt = $(new Option(label, uri));
+        opt.attr("uri", uri).attr("label", label);
+        $("#sel-pipestate3").append(opt);
+    }
+    $("#sel-pipestate4").html("");
+    $("#sel-pipestate4").append(new Option("", -1));
+    for (item in values) {
+        let uri = values[item].s.value;
+        let label = values[item].label.value;
+        let opt = $(new Option(label, uri));
+        opt.attr("uri", uri).attr("label", label);
+        $("#sel-pipestate4").append(opt);
+    }
+    $("#sel-pipestate5").html("");
+    $("#sel-pipestate5").append(new Option("", -1));
+    for (item in values) {
+        let uri = values[item].s.value;
+        let label = values[item].label.value;
+        let opt = $(new Option(label, uri));
+        opt.attr("uri", uri).attr("label", label);
+        $("#sel-pipestate5").append(opt);
+    }
+};
+
 let copyToClipboard = (element) => {
     var text = $("#hiddenclipboard").clone().find('br').prepend('\r\n').end().val();
+    element = $('<textarea>').appendTo('body').val(text).select();
+    document.execCommand('copy');
+    element.remove();
+};
+
+let copyToClipboardP = (element) => {
+    var text = $("#hiddenclipboardp").clone().find('br').prepend('\r\n').end().val();
     element = $('<textarea>').appendTo('body').val(text).select();
     document.execCommand('copy');
     element.remove();
@@ -275,8 +377,204 @@ let createToolTTL = () => {
     }
 };
 
+let createPipeTTL = () => {
+    // check input fields
+    let valide = true;
+    if ($("#inp-namep").val().length === 0) {
+        valide = false;
+        console.log(false, "name");
+    }
+    if ($("#inp-descriptionp").val().length === 0) {
+        valide = false;
+        console.log(false, "description");
+    }
+    if ($("#inp-authorp").val().length === 0) {
+        valide = false;
+        console.log(false, "author");
+    }
+    if ($("#pipe1").prop('checked')) {
+        if ($("#sel-pipestate1 option:selected").val() === "-1") {
+            valide = false;
+            console.log(false, "pipestate1");
+        }
+        if ($("#sel-pipetool1 option:selected").val() === "-1") {
+            valide = false;
+            console.log(false, "pipetool1");
+        }
+        if ($("#inp-pipein1").val().length === 0) {
+            valide = false;
+            console.log(false, "pipein1");
+        }
+        if ($("#inp-pipeout1").val().length === 0) {
+            valide = false;
+            console.log(false, "pipeout1");
+        }
+    }
+    if ($("#pipe2").prop('checked')) {
+        if ($("#sel-pipestate2 option:selected").val() === "-1") {
+            valide = false;
+            console.log(false, "pipestate2");
+        }
+        if ($("#sel-pipetool2 option:selected").val() === "-1") {
+            valide = false;
+            console.log(false, "pipetool2");
+        }
+        if ($("#inp-pipein2").val().length === 0) {
+            valide = false;
+            console.log(false, "pipein2");
+        }
+        if ($("#inp-pipeout2").val().length === 0) {
+            valide = false;
+            console.log(false, "pipeout2");
+        }
+    }
+    if ($("#pipe3").prop('checked')) {
+        if ($("#sel-pipestate3 option:selected").val() === "-1") {
+            valide = false;
+            console.log(false, "pipestate3");
+        }
+        if ($("#sel-pipetool3 option:selected").val() === "-1") {
+            valide = false;
+            console.log(false, "pipetool3");
+        }
+        if ($("#inp-pipein3").val().length === 0) {
+            valide = false;
+            console.log(false, "pipein3");
+        }
+        if ($("#inp-pipeout3").val().length === 0) {
+            valide = false;
+            console.log(false, "pipeout3");
+        }
+    }
+    if ($("#pipe4").prop('checked')) {
+        if ($("#sel-pipestate4 option:selected").val() === "-1") {
+            valide = false;
+            console.log(false, "pipestate4");
+        }
+        if ($("#sel-pipetool4 option:selected").val() === "-1") {
+            valide = false;
+            console.log(false, "pipetool4");
+        }
+        if ($("#inp-pipein4").val().length === 0) {
+            valide = false;
+            console.log(false, "pipein4");
+        }
+        if ($("#inp-pipeout4").val().length === 0) {
+            valide = false;
+            console.log(false, "pipeout4");
+        }
+    }
+    if ($("#pipe5").prop('checked')) {
+        if ($("#sel-pipestate5 option:selected").val() === "-1") {
+            valide = false;
+            console.log(false, "pipestate4");
+        }
+        if ($("#sel-pipetool5 option:selected").val() === "-1") {
+            valide = false;
+            console.log(false, "pipetool4");
+        }
+        if ($("#inp-pipein5").val().length === 0) {
+            valide = false;
+            console.log(false, "pipein4");
+        }
+        if ($("#inp-pipeout5").val().length === 0) {
+            valide = false;
+            console.log(false, "pipeout4");
+        }
+    }
+
+    if (valide == false) {
+        $("#alertdivp").show();
+        $("#hiddenclipboardp").val("");
+    } else {
+        $("#alertdivp").hide();
+        // create triples
+        let pipeID = UUID.getHashDigits(8);
+        let ttl = "";
+        ttl += "@prefix rset: <http://rsetools.squirrel.link#> .\r\n";
+        ttl += "@prefix pipe: <http://linkedpipes.xyz/pipes#> .\r\n";
+        ttl += "@prefix wd: <http://www.wikidata.org/entity/> .\r\n";
+        ttl += "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\r\n\r\n";
+        let current_datetime = new Date()
+        let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds();
+        ttl += "pipe:" + pipeID + " rset:rset:dateOfEntry " + "'" + formatted_date + "'" + ".\r\n";
+        ttl += "pipe:" + pipeID + " a " + " rset:Pipe " + ".\r\n";
+        ttl += "pipe:" + pipeID + " rset:name " + "'" + $('#inp-namep').val() + "'" + ".\r\n";
+        ttl += "pipe:" + pipeID + " rset:description " + "'" + $('#inp-descriptionp').val() + "'" + ".\r\n";
+        ttl += "pipe:" + pipeID + " rset:author " + "'" + $('#inp-authorp').val() + "'" + ".\r\n";
+        if ($("#pipe1").prop('checked')) {
+            let pipeStepID = UUID.getHashDigits(6);
+            ttl += "pipe:" + pipeID + " rset:next " + "_:" + pipeStepID + " .\r\n";
+            ttl += "_:" + pipeStepID + " a " + "rset:PipeStep " + ".\r\n";
+            ttl += "_:" + pipeStepID + " rset:pipeState " + $("#sel-pipestate1 option:selected").val() + " .\r\n";
+            ttl += "_:" + pipeStepID + " rset:uses " + $("#sel-pipetool1 option:selected").val() + " .\r\n";
+            let pipeStepObjInID = UUID.getHashDigits(6);
+            let pipeStepObjOutID = UUID.getHashDigits(6);
+            ttl += "_:" + pipeStepID + " rset:hasInput " + "_:" + pipeStepObjInID + " .\r\n";
+            ttl += "_:" + pipeStepID + " rset:hasOutput " + "_:" + pipeStepObjOutID + " .\r\n";
+            ttl += "_:" + pipeStepObjInID + " rset:description " + "'" + $('#inp-pipein1').val() + "'" + ".\r\n";
+            ttl += "_:" + pipeStepObjOutID + " rset:description " + "'" + $('#inp-pipeout1').val() + "'" + ".\r\n";
+        }
+        if ($("#pipe2").prop('checked')) {
+            let pipeStepID = UUID.getHashDigits(6);
+            ttl += "pipe:" + pipeID + " rset:next " + "_:" + pipeStepID + " .\r\n";
+            ttl += "_:" + pipeStepID + " a " + "rset:PipeStep " + ".\r\n";
+            ttl += "_:" + pipeStepID + " rset:pipeState " + $("#sel-pipestate2 option:selected").val() + " .\r\n";
+            ttl += "_:" + pipeStepID + " rset:uses " + $("#sel-pipetool2 option:selected").val() + " .\r\n";
+            let pipeStepObjInID = UUID.getHashDigits(6);
+            let pipeStepObjOutID = UUID.getHashDigits(6);
+            ttl += "_:" + pipeStepID + " rset:hasInput " + "_:" + pipeStepObjInID + " .\r\n";
+            ttl += "_:" + pipeStepID + " rset:hasOutput " + "_:" + pipeStepObjOutID + " .\r\n";
+            ttl += "_:" + pipeStepObjInID + " rset:description " + "'" + $('#inp-pipein2').val() + "'" + ".\r\n";
+            ttl += "_:" + pipeStepObjOutID + " rset:description " + "'" + $('#inp-pipeout2').val() + "'" + ".\r\n";
+        }
+        if ($("#pipe3").prop('checked')) {
+            let pipeStepID = UUID.getHashDigits(6);
+            ttl += "pipe:" + pipeID + " rset:next " + "_:" + pipeStepID + " .\r\n";
+            ttl += "_:" + pipeStepID + " a " + "rset:PipeStep " + ".\r\n";
+            ttl += "_:" + pipeStepID + " rset:pipeState " + $("#sel-pipestate3 option:selected").val() + " .\r\n";
+            ttl += "_:" + pipeStepID + " rset:uses " + $("#sel-pipetool3 option:selected").val() + " .\r\n";
+            let pipeStepObjInID = UUID.getHashDigits(6);
+            let pipeStepObjOutID = UUID.getHashDigits(6);
+            ttl += "_:" + pipeStepID + " rset:hasInput " + "_:" + pipeStepObjInID + " .\r\n";
+            ttl += "_:" + pipeStepID + " rset:hasOutput " + "_:" + pipeStepObjOutID + " .\r\n";
+            ttl += "_:" + pipeStepObjInID + " rset:description " + "'" + $('#inp-pipein3').val() + "'" + ".\r\n";
+            ttl += "_:" + pipeStepObjOutID + " rset:description " + "'" + $('#inp-pipeout3').val() + "'" + ".\r\n";
+        }
+        if ($("#pipe4").prop('checked')) {
+            let pipeStepID = UUID.getHashDigits(6);
+            ttl += "pipe:" + pipeID + " rset:next " + "_:" + pipeStepID + " .\r\n";
+            ttl += "_:" + pipeStepID + " a " + "rset:PipeStep " + ".\r\n";
+            ttl += "_:" + pipeStepID + " rset:pipeState " + $("#sel-pipestate4 option:selected").val() + " .\r\n";
+            ttl += "_:" + pipeStepID + " rset:uses " + $("#sel-pipetool4 option:selected").val() + " .\r\n";
+            let pipeStepObjInID = UUID.getHashDigits(6);
+            let pipeStepObjOutID = UUID.getHashDigits(6);
+            ttl += "_:" + pipeStepID + " rset:hasInput " + "_:" + pipeStepObjInID + " .\r\n";
+            ttl += "_:" + pipeStepID + " rset:hasOutput " + "_:" + pipeStepObjOutID + " .\r\n";
+            ttl += "_:" + pipeStepObjInID + " rset:description " + "'" + $('#inp-pipein4').val() + "'" + ".\r\n";
+            ttl += "_:" + pipeStepObjOutID + " rset:description " + "'" + $('#inp-pipeout4').val() + "'" + ".\r\n";
+        }
+        if ($("#pipe5").prop('checked')) {
+            let pipeStepID = UUID.getHashDigits(6);
+            ttl += "pipe:" + pipeID + " rset:next " + "_:" + pipeStepID + " .\r\n";
+            ttl += "_:" + pipeStepID + " a " + "rset:PipeStep " + ".\r\n";
+            ttl += "_:" + pipeStepID + " rset:pipeState " + $("#sel-pipestate5 option:selected").val() + " .\r\n";
+            ttl += "_:" + pipeStepID + " rset:uses " + $("#sel-pipetool5 option:selected").val() + " .\r\n";
+            let pipeStepObjInID = UUID.getHashDigits(6);
+            let pipeStepObjOutID = UUID.getHashDigits(6);
+            ttl += "_:" + pipeStepID + " rset:hasInput " + "_:" + pipeStepObjInID + " .\r\n";
+            ttl += "_:" + pipeStepID + " rset:hasOutput " + "_:" + pipeStepObjOutID + " .\r\n";
+            ttl += "_:" + pipeStepObjInID + " rset:description " + "'" + $('#inp-pipein5').val() + "'" + ".\r\n";
+            ttl += "_:" + pipeStepObjOutID + " rset:description " + "'" + $('#inp-pipeout5').val() + "'" + ".\r\n";
+        }
+        $("#hiddenclipboardp").val(ttl);
+    }
+};
+
 // INIT
 initModalCreateTool();
 initModalCreatePipe();
 $("#alertdiv").hide();
+$("#alertdivp").hide();
 $("#hiddenclipboard").hide();
+$("#hiddenclipboardp").hide();

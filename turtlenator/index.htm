@@ -140,10 +140,113 @@
                 <i class="fa fa-times button link" id="btn-modal-create-pipe-close"></i>
             </div>
             <div class="modal-body">
-                <h1><i class="fa fa-cubes" aria-hidden="true" style="color:LIGHTSEAGREEN"></i> Create Man-Made-Object</h1>
+                <h1><i class="fa fa-cog" aria-hidden="true" style="color:#c94fa0"></i> Create Linked Pipe</h1>
                 <br>
-                <div class="form-group">
+                <label for="inp-name">pipe name</label>
+                <input type="text" class="form-control" id="inp-namep" placeholder="name">
+                <br>
+                <label for="inp-description">pipe description</label>
+                <input type="text" class="form-control" id="inp-descriptionp" placeholder="description">
+                <br>
+                <label for="inp-description">pipe author</label>
+                <input type="text" class="form-control" id="inp-authorp" placeholder="author">
+                <br>
+                <p style="color:white;font-size:20px;">Pipe Step 1</p>
+                <label for="indivpipstate1">pipe step state</label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" id="pipe1">
+                    </span>
+                    <select id="sel-pipestate1" class="form-control"></select>
                 </div>
+                <br>
+                <label for="indivpipetool1">pipe step tool</label>
+                <select id="sel-pipetool1" class="form-control"></select>
+                <br>
+                <label for="inp-pipein1">pipe input</label>
+                <input type="text" class="form-control" id="inp-pipein1" placeholder="name">
+                <br>
+                <label for="inp-pipeout1">pipe output</label>
+                <input type="text" class="form-control" id="inp-pipeout1" placeholder="name">
+                <br>
+                <p style="color:white;font-size:20px;">Pipe Step 2</p>
+                <label for="indivpipstate2">pipe step state</label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" id="pipe2">
+                    </span>
+                    <select id="sel-pipestate2" class="form-control"></select>
+                </div>
+                <br>
+                <label for="indivpipetool2">pipe step tool</label>
+                <select id="sel-pipetool2" class="form-control"></select>
+                <br>
+                <label for="inp-pipein2">pipe input</label>
+                <input type="text" class="form-control" id="inp-pipein2" placeholder="name">
+                <br>
+                <label for="inp-pipeout2">pipe output</label>
+                <input type="text" class="form-control" id="inp-pipeout2" placeholder="name">
+                <br>
+                <p style="color:white;font-size:20px;">Pipe Step 3</p>
+                <label for="indivpipstate3">pipe step state</label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" id="pipe3">
+                    </span>
+                    <select id="sel-pipestate3" class="form-control"></select>
+                </div>
+                <br>
+                <label for="indivpipetool3">pipe step tool</label>
+                <select id="sel-pipetool3" class="form-control"></select>
+                <br>
+                <label for="inp-pipein3">pipe input</label>
+                <input type="text" class="form-control" id="inp-pipein3" placeholder="name">
+                <br>
+                <label for="inp-pipeout3">pipe output</label>
+                <input type="text" class="form-control" id="inp-pipeout3" placeholder="name">
+                <br>
+                <p style="color:white;font-size:20px;">Pipe Step 4</p>
+                <label for="indivpipstate4">pipe step state</label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" id="pipe4">
+                    </span>
+                    <select id="sel-pipestate4" class="form-control"></select>
+                </div>
+                <br>
+                <label for="indivpipetool4">pipe step tool</label>
+                <select id="sel-pipetool4" class="form-control"></select>
+                <br>
+                <label for="inp-pipein4">pipe input</label>
+                <input type="text" class="form-control" id="inp-pipein4" placeholder="name">
+                <br>
+                <label for="inp-pipeout4">pipe output</label>
+                <input type="text" class="form-control" id="inp-pipeout4" placeholder="name">
+                <br>
+                <p style="color:white;font-size:20px;">Pipe Step 5</p>
+                <label for="indivpipstate5">pipe step state</label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" id="pipe5">
+                    </span>
+                    <select id="sel-pipestate5" class="form-control"></select>
+                </div>
+                <br>
+                <label for="indivpipetool5">pipe step tool</label>
+                <select id="sel-pipetool5" class="form-control"></select>
+                <br>
+                <label for="inp-pipein5">pipe input</label>
+                <input type="text" class="form-control" id="inp-pipein5" placeholder="name">
+                <br>
+                <label for="inp-pipeout5">pipe output</label>
+                <input type="text" class="form-control" id="inp-pipeout5" placeholder="name">
+                <br><br>
+                <button type="button" class="btn btn-success form-control" id="btn-modalCreatePipe"><i class="fa fa-clipboard" aria-hidden="true"></i> Copy TTL to Clipboard</button>
+                <br><br>
+                <div class="alert alert-danger" role="alert" id="alertdivp"><b>
+                        <center>some input is wrong!</center>
+                    </b></div>
+                <textarea id="hiddenclipboardp" style="width:100%;height:400px;"></textarea>
             </div>
         </div>
     </div>
