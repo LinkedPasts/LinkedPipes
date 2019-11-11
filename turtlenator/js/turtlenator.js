@@ -316,9 +316,11 @@ let createToolTTL = () => {
 
     if (valide == false) {
         $("#alertdiv").show();
+        $("#successdiv").hide();
         $("#hiddenclipboard").val("");
     } else {
         $("#alertdiv").hide();
+        $("#successdiv").show();
         // create triples
         let ttl = "";
         ttl += "@prefix rset: <http://rsetools.squirrel.link#> .\r\n";
@@ -485,9 +487,11 @@ let createPipeTTL = () => {
 
     if (valide == false) {
         $("#alertdivp").show();
+        $("#successdivp").hide();
         $("#hiddenclipboardp").val("");
     } else {
         $("#alertdivp").hide();
+        $("#successdivp").show();
         // create triples
         let pipeID = UUID.getHashDigits(8);
         let ttl = "";
@@ -575,6 +579,8 @@ let createPipeTTL = () => {
 initModalCreateTool();
 initModalCreatePipe();
 $("#alertdiv").hide();
+$("#successdiv").hide();
 $("#alertdivp").hide();
+$("#successdivp").hide();
 $("#hiddenclipboard").hide();
 $("#hiddenclipboardp").hide();
