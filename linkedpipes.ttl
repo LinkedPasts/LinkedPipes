@@ -106,6 +106,22 @@ wd:Q286306 rset:producesLOD 'false'.
 wd:Q286306 rset:inputFormat rset:commandline.
 wd:Q286306 rset:outputFormat rset:commandline.
 
+# WikidataQueryServiceR
+wd:Q74696020 a rset:Tool .
+wd:Q74696020 a rset:LinkedTool .
+wd:Q74696020 rset:name 'WikidataQueryServiceR'.
+wd:Q74696020 rset:wikidataid 'Q74696020'.
+wd:Q74696020 rset:description 'API Client Library for 'Wikidata Query Service''.
+wd:Q74696020 rset:dateOfEntry '2019-11-12 16:48:11'.
+wd:Q74696020 rset:link <https://github.com/bearloga/WikidataQueryServiceR>.
+wd:Q74696020 rset:link <https://cran.r-project.org/package=WikidataQueryServiceR>.
+wd:Q74696020 rset:link <https://github.com/sparqlunicorn/sparqlunicornGoesR>.
+wd:Q74696020 rset:entryLevel rset:advanced.
+wd:Q74696020 rset:consumesLOD 'false'.
+wd:Q74696020 rset:producesLOD 'true'.
+wd:Q74696020 rset:inputFormat rset:SPARQL.
+wd:Q74696020 rset:outputFormat rset:RDF-XML.
+
 # Relative Chronology Pipe
 pipe:G8JR1EZL a rset:Pipe .
 pipe:G8JR1EZL rset:name 'Relative Chronology Pipe'.
