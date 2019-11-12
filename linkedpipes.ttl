@@ -122,6 +122,22 @@ wd:Q74696020 rset:producesLOD 'true'.
 wd:Q74696020 rset:inputFormat rset:SPARQL.
 wd:Q74696020 rset:outputFormat rset:RDF-XML.
 
+# SPARQLWrapper
+wd:Q74697234 a rset:Tool .
+wd:Q74697234 a rset:LinkedTool .
+wd:Q74697234 rset:name 'SPARQLWrapper'.
+wd:Q74697234 rset:wikidataid 'Q74697234'.
+wd:Q74697234 rset:description '	 SPARQLWrapper is a simple Python wrapper around a SPARQL service to remotelly execute your queries. It helps in creating the query invokation and, possibly, convert the result into a more manageable format.'.
+wd:Q74697234 rset:dateOfEntry '2019-11-12 16:54:35'.
+wd:Q74697234 rset:link <https://github.com/rdflib/sparqlwrapper>.
+wd:Q74697234 rset:link <https://rdflib.github.io/sparqlwrapper/>.
+wd:Q74697234 rset:link <https://github.com/sparqlunicorn/sparqlunicornGoesPy>.
+wd:Q74697234 rset:entryLevel rset:advanced.
+wd:Q74697234 rset:consumesLOD 'false'.
+wd:Q74697234 rset:producesLOD 'true'.
+wd:Q74697234 rset:inputFormat rset:SPARQL.
+wd:Q74697234 rset:outputFormat rset:RDF-XML.
+
 # Relative Chronology Pipe
 pipe:G8JR1EZL a rset:Pipe .
 pipe:G8JR1EZL rset:name 'Relative Chronology Pipe'.
