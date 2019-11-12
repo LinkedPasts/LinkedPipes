@@ -328,7 +328,7 @@ let createToolTTL = () => {
         ttl += "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\r\n\r\n";
         let current_datetime = new Date()
         let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds();
-        ttl += "# " + $('#inp-name').val() + ".\r\n";
+        ttl += "# " + $('#inp-name').val() + "\r\n";
         ttl += $("#inp-wikidata").attr("uri") + " a " + "rset:Tool " + ".\r\n";
         ttl += $("#inp-wikidata").attr("uri") + " a " + "rset:LinkedTool " + ".\r\n";
         ttl += $("#inp-wikidata").attr("uri") + " rset:name " + "'" + $('#inp-name').val() + "'" + ".\r\n";
