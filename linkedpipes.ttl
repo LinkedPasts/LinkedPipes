@@ -59,6 +59,24 @@ wd:Q74005133 rset:inputFormat rset:SPARQL.
 wd:Q74005133 rset:outputFormat rset:SHP.
 wd:Q74005133 rset:outputFormat rset:GEOJSON.
 
+# xTriples
+wd:Q74526175 a rset:Tool .
+wd:Q74526175 a rset:LinkedTool .
+wd:Q74526175 rset:name 'xTriples'.
+wd:Q74526175 rset:wikidataid 'Q74526175'.
+wd:Q74526175 rset:description 'Web services for extracting RDF from XML'.
+wd:Q74526175 rset:dateOfEntry '2019-11-12 14:40:19'.
+wd:Q74526175 rset:link <https://github.com/digicademy/xtriples>.
+wd:Q74526175 rset:link <https://xtriples.lod.academy/index.html>.
+wd:Q74526175 rset:entryLevel rset:advanced.
+wd:Q74526175 rset:consumesLOD 'false'.
+wd:Q74526175 rset:producesLOD 'true'.
+wd:Q74526175 rset:inputFormat rset:XML.
+wd:Q74526175 rset:outputFormat rset:RDF-XML.
+wd:Q74526175 rset:outputFormat rset:TTL.
+wd:Q74526175 rset:outputFormat rset:JSON.
+wd:Q74526175 rset:outputFormat rset:SVG.
+
 # Relative Chronology Pipe
 pipe:G8JR1EZL a rset:Pipe .
 pipe:G8JR1EZL rset:name 'Relative Chronology Pipe'.
