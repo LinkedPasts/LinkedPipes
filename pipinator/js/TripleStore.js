@@ -64,20 +64,55 @@ TS.query = (sparql, callback) => {
                             obj.author = bindings[item]['author'].value;
                             obj.id = bindings[item]['s'].value;
                             obj.url = bindings[item]['s'].value;
+                            obj.step1 = "";
                             if (typeof bindings[item]['toolname'] !== 'undefined') {
                                 arrTool.push(bindings[item]['toolname'].value);
+                                let tmp = {};
+                                tmp.tool = bindings[item]['toolname'].value;
+                                tmp.state = bindings[item]['state'].value.replace("http://rsetools.squirrel.link#", "");
+                                tmp.in = bindings[item]['inputdesc'].value;
+                                tmp.out = bindings[item]['outputdesc'].value;
+                                obj.step1 = JSON.stringify(tmp);
                             }
+                            obj.step2 = "";
                             if (typeof bindings[item]['toolname2'] !== 'undefined') {
                                 arrTool.push(bindings[item]['toolname2'].value);
+                                let tmp = {};
+                                tmp.tool = bindings[item]['toolname2'].value;
+                                tmp.state = bindings[item]['state2'].value.replace("http://rsetools.squirrel.link#", "");
+                                tmp.in = bindings[item]['inputdesc2'].value;
+                                tmp.out = bindings[item]['outputdesc2'].value;
+                                obj.step2 = JSON.stringify(tmp);
                             }
+                            obj.step3 = "";
                             if (typeof bindings[item]['toolname3'] !== 'undefined') {
                                 arrTool.push(bindings[item]['toolname3'].value);
+                                let tmp = {};
+                                tmp.tool = bindings[item]['toolname3'].value;
+                                tmp.state = bindings[item]['state3'].value.replace("http://rsetools.squirrel.link#", "");
+                                tmp.in = bindings[item]['inputdesc3'].value;
+                                tmp.out = bindings[item]['outputdesc3'].value;
+                                obj.step3 = JSON.stringify(tmp);
                             }
+                            obj.step4 = "";
                             if (typeof bindings[item]['toolname4'] !== 'undefined') {
                                 arrTool.push(bindings[item]['toolname4'].value);
+                                let tmp = {};
+                                tmp.tool = bindings[item]['toolname4'].value;
+                                tmp.state = bindings[item]['state4'].value.replace("http://rsetools.squirrel.link#", "");
+                                tmp.in = bindings[item]['inputdesc4'].value;
+                                tmp.out = bindings[item]['outputdesc4'].value;
+                                obj.step4 = JSON.stringify(tmp);
                             }
+                            obj.step5 = "";
                             if (typeof bindings[item]['toolname5'] !== 'undefined') {
                                 arrTool.push(bindings[item]['toolname5'].value);
+                                let tmp = {};
+                                tmp.tool = bindings[item]['toolname5'].value;
+                                tmp.state = bindings[item]['state5'].value.replace("http://rsetools.squirrel.link#", "");
+                                tmp.in = bindings[item]['inputdesc5'].value;
+                                tmp.out = bindings[item]['outputdesc5'].value;
+                                obj.step5 = JSON.stringify(tmp);
                             }
                         }
                     }
