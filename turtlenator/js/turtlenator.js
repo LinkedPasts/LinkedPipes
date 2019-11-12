@@ -328,12 +328,12 @@ let createToolTTL = () => {
         ttl += "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\r\n\r\n";
         let current_datetime = new Date()
         let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds();
-        ttl += $("#inp-wikidata").attr("uri") + " rset:rset:dateOfEntry " + "'" + formatted_date + "'" + ".\r\n";
-        ttl += $("#inp-wikidata").attr("uri") + " a " + " rset:Tool " + ".\r\n";
-        ttl += $("#inp-wikidata").attr("uri") + " a " + " rset:LinkedTool " + ".\r\n";
+        ttl += $("#inp-wikidata").attr("uri") + " a " + "rset:Tool " + ".\r\n";
+        ttl += $("#inp-wikidata").attr("uri") + " a " + "rset:LinkedTool " + ".\r\n";
         ttl += $("#inp-wikidata").attr("uri") + " rset:name " + "'" + $('#inp-name').val() + "'" + ".\r\n";
-        ttl += $("#inp-wikidata").attr("uri") + " rset:wikidataid " + "'" +  $("#inp-wikidata").attr("uri").replace("wd:","") + "'" + ".\r\n";
+        ttl += $("#inp-wikidata").attr("uri") + " rset:wikidataid " + "'" + $("#inp-wikidata").attr("uri").replace("wd:", "") + "'" + ".\r\n";
         ttl += $("#inp-wikidata").attr("uri") + " rset:description " + "'" + $('#inp-description').val() + "'" + ".\r\n";
+        ttl += $("#inp-wikidata").attr("uri") + " rset:dateOfEntry " + "'" + formatted_date + "'" + ".\r\n";
         if ($("#inp-link1").val().includes("http")) {
             ttl += $("#inp-wikidata").attr("uri") + " rset:link " + "<" + $('#inp-link1').val() + ">" + ".\r\n";
         }
@@ -502,73 +502,73 @@ let createPipeTTL = () => {
         ttl += "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\r\n\r\n";
         let current_datetime = new Date()
         let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds();
-        ttl += "pipe:" + pipeID + " rset:rset:dateOfEntry " + "'" + formatted_date + "'" + ".\r\n";
-        ttl += "pipe:" + pipeID + " a " + " rset:Pipe " + ".\r\n";
+        ttl += "pipe:" + pipeID + " a " + "rset:Pipe " + ".\r\n";
         ttl += "pipe:" + pipeID + " rset:name " + "'" + $('#inp-namep').val() + "'" + ".\r\n";
         ttl += "pipe:" + pipeID + " rset:description " + "'" + $('#inp-descriptionp').val() + "'" + ".\r\n";
         ttl += "pipe:" + pipeID + " rset:author " + "'" + $('#inp-authorp').val() + "'" + ".\r\n";
+        ttl += "pipe:" + pipeID + " rset:rset:dateOfEntry " + "'" + formatted_date + "'" + ".\r\n";
+        let pipeStepID1 = UUID.getHashDigits(6);
+        let pipeStepID2 = UUID.getHashDigits(6);
+        let pipeStepID3 = UUID.getHashDigits(6);
+        let pipeStepID4 = UUID.getHashDigits(6);
+        let pipeStepID5 = UUID.getHashDigits(6);
         if ($("#pipe1").prop('checked')) {
-            let pipeStepID = UUID.getHashDigits(6);
-            ttl += "pipe:" + pipeID + " rset:next " + "_:" + pipeStepID + " .\r\n";
-            ttl += "_:" + pipeStepID + " a " + "rset:PipeStep " + ".\r\n";
-            ttl += "_:" + pipeStepID + " rset:pipeState " + $("#sel-pipestate1 option:selected").val() + " .\r\n";
-            ttl += "_:" + pipeStepID + " rset:uses " + $("#sel-pipetool1 option:selected").val() + " .\r\n";
+            ttl += "pipe:" + pipeID + " rset:next " + "_:" + pipeStepID1 + " .\r\n";
+            ttl += "_:" + pipeStepID1 + " a " + "rset:PipeStep " + ".\r\n";
+            ttl += "_:" + pipeStepID1 + " rset:pipeState " + $("#sel-pipestate1 option:selected").val() + " .\r\n";
+            ttl += "_:" + pipeStepID1 + " rset:uses " + $("#sel-pipetool1 option:selected").val() + " .\r\n";
             let pipeStepObjInID = UUID.getHashDigits(6);
             let pipeStepObjOutID = UUID.getHashDigits(6);
-            ttl += "_:" + pipeStepID + " rset:hasInput " + "_:" + pipeStepObjInID + " .\r\n";
-            ttl += "_:" + pipeStepID + " rset:hasOutput " + "_:" + pipeStepObjOutID + " .\r\n";
+            ttl += "_:" + pipeStepID1 + " rset:hasInput " + "_:" + pipeStepObjInID + " .\r\n";
+            ttl += "_:" + pipeStepID1 + " rset:hasOutput " + "_:" + pipeStepObjOutID + " .\r\n";
             ttl += "_:" + pipeStepObjInID + " rset:description " + "'" + $('#inp-pipein1').val() + "'" + ".\r\n";
             ttl += "_:" + pipeStepObjOutID + " rset:description " + "'" + $('#inp-pipeout1').val() + "'" + ".\r\n";
         }
         if ($("#pipe2").prop('checked')) {
-            let pipeStepID = UUID.getHashDigits(6);
-            ttl += "pipe:" + pipeID + " rset:next " + "_:" + pipeStepID + " .\r\n";
-            ttl += "_:" + pipeStepID + " a " + "rset:PipeStep " + ".\r\n";
-            ttl += "_:" + pipeStepID + " rset:pipeState " + $("#sel-pipestate2 option:selected").val() + " .\r\n";
-            ttl += "_:" + pipeStepID + " rset:uses " + $("#sel-pipetool2 option:selected").val() + " .\r\n";
+            ttl += "_:" + pipeStepID1 + " rset:next " + "_:" + pipeStepID2 + " .\r\n";
+            ttl += "_:" + pipeStepID2 + " a " + "rset:PipeStep " + ".\r\n";
+            ttl += "_:" + pipeStepID2 + " rset:pipeState " + $("#sel-pipestate2 option:selected").val() + " .\r\n";
+            ttl += "_:" + pipeStepID2 + " rset:uses " + $("#sel-pipetool2 option:selected").val() + " .\r\n";
             let pipeStepObjInID = UUID.getHashDigits(6);
             let pipeStepObjOutID = UUID.getHashDigits(6);
-            ttl += "_:" + pipeStepID + " rset:hasInput " + "_:" + pipeStepObjInID + " .\r\n";
-            ttl += "_:" + pipeStepID + " rset:hasOutput " + "_:" + pipeStepObjOutID + " .\r\n";
+            ttl += "_:" + pipeStepID2 + " rset:hasInput " + "_:" + pipeStepObjInID + " .\r\n";
+            ttl += "_:" + pipeStepID2 + " rset:hasOutput " + "_:" + pipeStepObjOutID + " .\r\n";
             ttl += "_:" + pipeStepObjInID + " rset:description " + "'" + $('#inp-pipein2').val() + "'" + ".\r\n";
             ttl += "_:" + pipeStepObjOutID + " rset:description " + "'" + $('#inp-pipeout2').val() + "'" + ".\r\n";
         }
         if ($("#pipe3").prop('checked')) {
-            let pipeStepID = UUID.getHashDigits(6);
-            ttl += "pipe:" + pipeID + " rset:next " + "_:" + pipeStepID + " .\r\n";
-            ttl += "_:" + pipeStepID + " a " + "rset:PipeStep " + ".\r\n";
-            ttl += "_:" + pipeStepID + " rset:pipeState " + $("#sel-pipestate3 option:selected").val() + " .\r\n";
-            ttl += "_:" + pipeStepID + " rset:uses " + $("#sel-pipetool3 option:selected").val() + " .\r\n";
+            ttl += "_:" + pipeStepID2 + " rset:next " + "_:" + pipeStepID3 + " .\r\n";
+            ttl += "_:" + pipeStepID3 + " a " + "rset:PipeStep " + ".\r\n";
+            ttl += "_:" + pipeStepID3 + " rset:pipeState " + $("#sel-pipestate3 option:selected").val() + " .\r\n";
+            ttl += "_:" + pipeStepID3 + " rset:uses " + $("#sel-pipetool3 option:selected").val() + " .\r\n";
             let pipeStepObjInID = UUID.getHashDigits(6);
             let pipeStepObjOutID = UUID.getHashDigits(6);
-            ttl += "_:" + pipeStepID + " rset:hasInput " + "_:" + pipeStepObjInID + " .\r\n";
-            ttl += "_:" + pipeStepID + " rset:hasOutput " + "_:" + pipeStepObjOutID + " .\r\n";
+            ttl += "_:" + pipeStepID3 + " rset:hasInput " + "_:" + pipeStepObjInID + " .\r\n";
+            ttl += "_:" + pipeStepID3 + " rset:hasOutput " + "_:" + pipeStepObjOutID + " .\r\n";
             ttl += "_:" + pipeStepObjInID + " rset:description " + "'" + $('#inp-pipein3').val() + "'" + ".\r\n";
             ttl += "_:" + pipeStepObjOutID + " rset:description " + "'" + $('#inp-pipeout3').val() + "'" + ".\r\n";
         }
         if ($("#pipe4").prop('checked')) {
-            let pipeStepID = UUID.getHashDigits(6);
-            ttl += "pipe:" + pipeID + " rset:next " + "_:" + pipeStepID + " .\r\n";
-            ttl += "_:" + pipeStepID + " a " + "rset:PipeStep " + ".\r\n";
-            ttl += "_:" + pipeStepID + " rset:pipeState " + $("#sel-pipestate4 option:selected").val() + " .\r\n";
-            ttl += "_:" + pipeStepID + " rset:uses " + $("#sel-pipetool4 option:selected").val() + " .\r\n";
+            ttl += "_:" + pipeStepID3 + " rset:next " + "_:" + pipeStepID4 + " .\r\n";
+            ttl += "_:" + pipeStepID4 + " a " + "rset:PipeStep " + ".\r\n";
+            ttl += "_:" + pipeStepID4 + " rset:pipeState " + $("#sel-pipestate4 option:selected").val() + " .\r\n";
+            ttl += "_:" + pipeStepID4 + " rset:uses " + $("#sel-pipetool4 option:selected").val() + " .\r\n";
             let pipeStepObjInID = UUID.getHashDigits(6);
             let pipeStepObjOutID = UUID.getHashDigits(6);
-            ttl += "_:" + pipeStepID + " rset:hasInput " + "_:" + pipeStepObjInID + " .\r\n";
-            ttl += "_:" + pipeStepID + " rset:hasOutput " + "_:" + pipeStepObjOutID + " .\r\n";
+            ttl += "_:" + pipeStepID4 + " rset:hasInput " + "_:" + pipeStepObjInID + " .\r\n";
+            ttl += "_:" + pipeStepID4 + " rset:hasOutput " + "_:" + pipeStepObjOutID + " .\r\n";
             ttl += "_:" + pipeStepObjInID + " rset:description " + "'" + $('#inp-pipein4').val() + "'" + ".\r\n";
             ttl += "_:" + pipeStepObjOutID + " rset:description " + "'" + $('#inp-pipeout4').val() + "'" + ".\r\n";
         }
         if ($("#pipe5").prop('checked')) {
-            let pipeStepID = UUID.getHashDigits(6);
-            ttl += "pipe:" + pipeID + " rset:next " + "_:" + pipeStepID + " .\r\n";
-            ttl += "_:" + pipeStepID + " a " + "rset:PipeStep " + ".\r\n";
-            ttl += "_:" + pipeStepID + " rset:pipeState " + $("#sel-pipestate5 option:selected").val() + " .\r\n";
-            ttl += "_:" + pipeStepID + " rset:uses " + $("#sel-pipetool5 option:selected").val() + " .\r\n";
+            ttl += "_:" + pipeStepID4 + " rset:next " + "_:" + pipeStepID5 + " .\r\n";
+            ttl += "_:" + pipeStepID5 + " a " + "rset:PipeStep " + ".\r\n";
+            ttl += "_:" + pipeStepID5 + " rset:pipeState " + $("#sel-pipestate5 option:selected").val() + " .\r\n";
+            ttl += "_:" + pipeStepID5 + " rset:uses " + $("#sel-pipetool5 option:selected").val() + " .\r\n";
             let pipeStepObjInID = UUID.getHashDigits(6);
             let pipeStepObjOutID = UUID.getHashDigits(6);
-            ttl += "_:" + pipeStepID + " rset:hasInput " + "_:" + pipeStepObjInID + " .\r\n";
-            ttl += "_:" + pipeStepID + " rset:hasOutput " + "_:" + pipeStepObjOutID + " .\r\n";
+            ttl += "_:" + pipeStepID5 + " rset:hasInput " + "_:" + pipeStepObjInID + " .\r\n";
+            ttl += "_:" + pipeStepID5 + " rset:hasOutput " + "_:" + pipeStepObjOutID + " .\r\n";
             ttl += "_:" + pipeStepObjInID + " rset:description " + "'" + $('#inp-pipein5').val() + "'" + ".\r\n";
             ttl += "_:" + pipeStepObjOutID + " rset:description " + "'" + $('#inp-pipeout5').val() + "'" + ".\r\n";
         }
