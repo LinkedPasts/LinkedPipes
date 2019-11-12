@@ -58,28 +58,32 @@ wd:Q74005133 rset:outputFormat rset:SHP.
 wd:Q74005133 rset:outputFormat rset:GEOJSON.
 
 #Relative Chronology Pipe
-_:0001 a rset:Pipe.
-_:0001 rset:name "Relative Chronology Pipe".
-_:0001 rset:description "Pipe to create a relative chronology with time reasoning".
-_:0001 rset:author "Florian Thiery, Allard Mees".
-_:0001 rset:dateOfEntry "08/11/2019".
-_:0002 rset:next _:0002.
-_:0002 a rset:PipeStep.
-_:0002 rset:pipeState rset:start.
-_:0002 rset:uses wd:Q74004218.
-_:0002 rset:hasInput _:0003.
-_:0003 a rset:PipeObject.
-_:0003 rset:description "CSV results of a CA".
-_:0002 rset:hasOutput _:0004.
-_:0004 a rset:PipeObject.
-_:0004 rset:description "relative Chronology (Allen Interval)".
-_:0002 rset:next _:0005.
-_:0005 a rset:PipeStep.
-_:0005 rset:pipeState rset:end.
-_:0005 rset:uses wd:Q74003194.
-_:0005 rset:hasInput _:0006.
-_:0006 a rset:PipeObject.
-_:0006 rset:description "relative Chronology (Allen Interval)".
-_:0005 rset:hasOutput _:0007.
-_:0007 a rset:PipeObject.
-_:0007 rset:description "RDF with time reasoning".
+pipe:MCULK8VM rset:dateOfEntry '2019-11-12 10:53:27'.
+pipe:MCULK8VM a rset:Pipe .
+pipe:MCULK8VM rset:name 'Relative Chronology Pipe to QGIS'.
+pipe:MCULK8VM rset:description 'Pipe to create a relative chronology with time reasoning'.
+pipe:MCULK8VM rset:author 'Florian Thiery, Allard Mees'.
+pipe:MCULK8VM rset:next _:MLC2X2 .
+_:MLC2X2 a rset:PipeStep .
+_:MLC2X2 rset:pipeState rset:start .
+_:MLC2X2 rset:uses wd:Q74004218 .
+_:MLC2X2 rset:hasInput _:LEVFVV .
+_:MLC2X2 rset:hasOutput _:AUWDNN .
+_:LEVFVV rset:description 'CSV results of a CA'.
+_:AUWDNN rset:description 'relative Chronology (Allen Interval)'.
+_:MLC2X2 rset:next _:LBDPSN .
+_:LBDPSN a rset:PipeStep .
+_:LBDPSN rset:pipeState rset:step .
+_:LBDPSN rset:uses wd:Q74003194 .
+_:LBDPSN rset:hasInput _:22YGQ4 .
+_:LBDPSN rset:hasOutput _:TDL4GP .
+_:22YGQ4 rset:description 'relative Chronology (Allen Interval)'.
+_:TDL4GP rset:description 'RDF with time reasoning'.
+_:LBDPSN rset:next _:N7PPBK .
+_:N7PPBK a rset:PipeStep .
+_:N7PPBK rset:pipeState rset:end .
+_:N7PPBK rset:uses wd:Q74005133 .
+_:N7PPBK rset:hasInput _:M7G4HU .
+_:N7PPBK rset:hasOutput _:GCQUK3 .
+_:M7G4HU rset:description 'RDF with time reasoning'.
+_:GCQUK3 rset:description 'GeoJSON layer'.
