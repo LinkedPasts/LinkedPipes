@@ -111,7 +111,7 @@ wd:Q74696020 a rset:Tool .
 wd:Q74696020 a rset:LinkedTool .
 wd:Q74696020 rset:name 'WikidataQueryServiceR'.
 wd:Q74696020 rset:wikidataid 'Q74696020'.
-wd:Q74696020 rset:description 'API Client Library for 'Wikidata Query Service''.
+wd:Q74696020 rset:description 'API Client Library for Wikidata Query Service'.
 wd:Q74696020 rset:dateOfEntry '2019-11-12 16:48:11'.
 wd:Q74696020 rset:link <https://github.com/bearloga/WikidataQueryServiceR>.
 wd:Q74696020 rset:link <https://cran.r-project.org/package=WikidataQueryServiceR>.
@@ -127,7 +127,7 @@ wd:Q74697234 a rset:Tool .
 wd:Q74697234 a rset:LinkedTool .
 wd:Q74697234 rset:name 'SPARQLWrapper'.
 wd:Q74697234 rset:wikidataid 'Q74697234'.
-wd:Q74697234 rset:description '	 SPARQLWrapper is a simple Python wrapper around a SPARQL service to remotelly execute your queries. It helps in creating the query invokation and, possibly, convert the result into a more manageable format.'.
+wd:Q74697234 rset:description 'SPARQLWrapper is a simple Python wrapper around a SPARQL service to remotelly execute your queries. It helps in creating the query invokation and, possibly, convert the result into a more manageable format.'.
 wd:Q74697234 rset:dateOfEntry '2019-11-12 16:54:35'.
 wd:Q74697234 rset:link <https://github.com/rdflib/sparqlwrapper>.
 wd:Q74697234 rset:link <https://rdflib.github.io/sparqlwrapper/>.
