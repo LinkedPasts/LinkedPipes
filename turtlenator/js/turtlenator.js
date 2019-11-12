@@ -332,6 +332,7 @@ let createToolTTL = () => {
         ttl += $("#inp-wikidata").attr("uri") + " a " + " rset:Tool " + ".\r\n";
         ttl += $("#inp-wikidata").attr("uri") + " a " + " rset:LinkedTool " + ".\r\n";
         ttl += $("#inp-wikidata").attr("uri") + " rset:name " + "'" + $('#inp-name').val() + "'" + ".\r\n";
+        ttl += $("#inp-wikidata").attr("uri") + " rset:wikidataid " + "'" +  $("#inp-wikidata").attr("uri").replace("wd:","") + "'" + ".\r\n";
         ttl += $("#inp-wikidata").attr("uri") + " rset:description " + "'" + $('#inp-description').val() + "'" + ".\r\n";
         if ($("#inp-link1").val().includes("http")) {
             ttl += $("#inp-wikidata").attr("uri") + " rset:link " + "<" + $('#inp-link1').val() + ">" + ".\r\n";
