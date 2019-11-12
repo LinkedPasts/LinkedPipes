@@ -77,6 +77,26 @@ wd:Q74526175 rset:outputFormat rset:TTL.
 wd:Q74526175 rset:outputFormat rset:JSON.
 wd:Q74526175 rset:outputFormat rset:SVG.
 
+# Recogito
+wd:Q74692524 a rset:Tool .
+wd:Q74692524 a rset:LinkedTool .
+wd:Q74692524 rset:name 'Recogito'.
+wd:Q74692524 rset:wikidataid 'Q74692524'.
+wd:Q74692524 rset:description 'Semantic Annotation tool for texts and images, developed by Pelagios Commons'.
+wd:Q74692524 rset:dateOfEntry '2019-11-12 16:59:36'.
+wd:Q74692524 rset:link <http://github.com/pelagios/recogito2>.
+wd:Q74692524 rset:link <https://recogito.pelagios.org>.
+wd:Q74692524 rset:entryLevel rset:beginner.
+wd:Q74692524 rset:consumesLOD 'false'.
+wd:Q74692524 rset:producesLOD 'true'.
+wd:Q74692524 rset:inputFormat rset:PNG.
+wd:Q74692524 rset:inputFormat rset:JPG.
+wd:Q74692524 rset:inputFormat rset:PLAIN-TEXT.
+wd:Q74692524 rset:inputFormat rset:TIFF.
+wd:Q74692524 rset:outputFormat rset:CSV.
+wd:Q74692524 rset:outputFormat rset:TTL.
+wd:Q74692524 rset:outputFormat rset:RDF-XML.
+
 # Peripleo
 wd:Q74693165 a rset:Tool .
 wd:Q74693165 a rset:LinkedTool .
