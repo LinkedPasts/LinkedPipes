@@ -10,32 +10,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 # Alligator Tool
-wd:Q74004218 a rset:Tool.
-wd:Q74004218 a rset:LinkedTool.
-wd:Q74004218 rset:name "Alligator".
-wd:Q74004218 rset:wikidataid "Q74004218".
-wd:Q74004218 rset:description "An ontology and web app for transforming a correspondence analyses with fixed and floating time intervals to a relative chronology and RDF representation using Allen's interval algebra.".
+wd:Q74004218 a rset:Tool .
+wd:Q74004218 a rset:LinkedTool .
+wd:Q74004218 rset:name 'Alligator'.
+wd:Q74004218 rset:wikidataid 'Q74004218'.
+wd:Q74004218 rset:description 'Web app for transforming a correspondence analyses with fixed and floating time intervals to a relative chronology and RDF representation using Allens interval algebra.'.
+wd:Q74004218 rset:dateOfEntry '2019-11-12 11:53:12'.
 wd:Q74004218 rset:link <https://rgzm.github.io/alligator>.
-wd:Q74004218 rset:dateOfEntry "08/11/2019".
+wd:Q74004218 rset:link <https://github.com/RGZM/alligator>.
 wd:Q74004218 rset:entryLevel rset:advanced.
-wd:Q74004218 rset:consumesLOD "false".
-wd:Q74004218 rset:producesLOD "true".
+wd:Q74004218 rset:consumesLOD 'false'.
+wd:Q74004218 rset:producesLOD 'true'.
 wd:Q74004218 rset:inputFormat rset:CSV.
 wd:Q74004218 rset:outputFormat rset:CSV.
 wd:Q74004218 rset:outputFormat rset:TTL.
 wd:Q74004218 rset:outputFormat rset:HTML.
 
 # Academic Meta Tool
-wd:Q74003194 a rset:Tool.
-wd:Q74003194 a rset:LinkedTool.
-wd:Q74003194 rset:name "Academic Meta Tool".
-wd:Q74003194 rset:wikidataid "Q74003194".
-wd:Q74003194 rset:description "An ontology and webapp for modelling vagueness in graphs including reasoning.".
+wd:Q74003194 a rset:Tool .
+wd:Q74003194 a rset:LinkedTool .
+wd:Q74003194 rset:name 'Academic Meta Tool'.
+wd:Q74003194 rset:wikidataid 'Q74003194'.
+wd:Q74003194 rset:description 'Webapp for modelling vagueness in graphs including reasoning.'.
+wd:Q74003194 rset:dateOfEntry '2019-11-12 11:55:56'.
 wd:Q74003194 rset:link <http://academic-meta-tool.xyz>.
-wd:Q74003194 rset:dateOfEntry "09/11/2019".
 wd:Q74003194 rset:entryLevel rset:beginner.
-wd:Q74003194 rset:consumesLOD "false".
-wd:Q74003194 rset:producesLOD "true".
+wd:Q74003194 rset:consumesLOD 'false'.
+wd:Q74003194 rset:producesLOD 'true'.
 wd:Q74003194 rset:inputFormat rset:JSON.
 wd:Q74003194 rset:outputFormat rset:CSV.
 wd:Q74003194 rset:outputFormat rset:TTL.
@@ -43,47 +44,40 @@ wd:Q74003194 rset:outputFormat rset:HTML.
 wd:Q74003194 rset:outputFormat rset:CYPHER.
 
 # SPARQLing Unicorn QGIS Plugin
-wd:Q74005133 a rset:Tool.
-wd:Q74005133 a rset:LinkedTool.
-wd:Q74005133 rset:name "SPARQLing Unicorn QGIS Plugin".
-wd:Q74005133 rset:wikidataid "Q74005133".
-wd:Q74005133 rset:description "Plugin to add a layer in QGIS from Linked Data SPARQL endpoints.".
+wd:Q74005133 a rset:Tool .
+wd:Q74005133 a rset:LinkedTool .
+wd:Q74005133 rset:name 'SPARQLing Unicorn QGIS Plugin'.
+wd:Q74005133 rset:wikidataid 'Q74005133'.
+wd:Q74005133 rset:description 'Plugin to add a layer in QGIS from Linked Data SPARQL endpoints.'.
+wd:Q74005133 rset:dateOfEntry '2019-11-12 11:58:40'.
 wd:Q74005133 rset:link <https://plugins.qgis.org/plugins/sparqlunicorn/>.
-wd:Q74005133 rset:dateOfEntry "10/11/2019".
+wd:Q74005133 rset:link <https://github.com/sparqlunicorn/sparqlunicornGoesGIS>.
 wd:Q74005133 rset:entryLevel rset:beginner.
-wd:Q74005133 rset:consumesLOD "true".
-wd:Q74005133 rset:producesLOD "false".
+wd:Q74005133 rset:consumesLOD 'true'.
+wd:Q74005133 rset:producesLOD 'false'.
 wd:Q74005133 rset:inputFormat rset:SPARQL.
 wd:Q74005133 rset:outputFormat rset:SHP.
 wd:Q74005133 rset:outputFormat rset:GEOJSON.
 
-#Relative Chronology Pipe
-pipe:MCULK8VM rset:dateOfEntry '2019-11-12 10:53:27'.
-pipe:MCULK8VM a rset:Pipe .
-pipe:MCULK8VM rset:name 'Relative Chronology Pipe to QGIS'.
-pipe:MCULK8VM rset:description 'Pipe to create a relative chronology with time reasoning'.
-pipe:MCULK8VM rset:author 'Florian Thiery, Allard Mees'.
-pipe:MCULK8VM rset:next _:MLC2X2 .
-_:MLC2X2 a rset:PipeStep .
-_:MLC2X2 rset:pipeState rset:start .
-_:MLC2X2 rset:uses wd:Q74004218 .
-_:MLC2X2 rset:hasInput _:LEVFVV .
-_:MLC2X2 rset:hasOutput _:AUWDNN .
-_:LEVFVV rset:description 'CSV results of a CA'.
-_:AUWDNN rset:description 'relative Chronology (Allen Interval)'.
-_:MLC2X2 rset:next _:LBDPSN .
-_:LBDPSN a rset:PipeStep .
-_:LBDPSN rset:pipeState rset:step .
-_:LBDPSN rset:uses wd:Q74003194 .
-_:LBDPSN rset:hasInput _:22YGQ4 .
-_:LBDPSN rset:hasOutput _:TDL4GP .
-_:22YGQ4 rset:description 'relative Chronology (Allen Interval)'.
-_:TDL4GP rset:description 'RDF with time reasoning'.
-_:LBDPSN rset:next _:N7PPBK .
-_:N7PPBK a rset:PipeStep .
-_:N7PPBK rset:pipeState rset:end .
-_:N7PPBK rset:uses wd:Q74005133 .
-_:N7PPBK rset:hasInput _:M7G4HU .
-_:N7PPBK rset:hasOutput _:GCQUK3 .
-_:M7G4HU rset:description 'RDF with time reasoning'.
-_:GCQUK3 rset:description 'GeoJSON layer'.
+# Relative Chronology Pipe
+pipe:G8JR1EZL a rset:Pipe .
+pipe:G8JR1EZL rset:name 'Relative Chronology Pipe'.
+pipe:G8JR1EZL rset:description 'Pipe to create a relative chronology with time reasoning.'.
+pipe:G8JR1EZL rset:author 'Florian Thiery, Allard Mees'.
+pipe:G8JR1EZL rset:dateOfEntry '2019-11-12 12:3:52'.
+pipe:G8JR1EZL rset:next _:ECKZ6R .
+_:ECKZ6R a rset:PipeStep .
+_:ECKZ6R rset:pipeState rset:start .
+_:ECKZ6R rset:uses wd:Q74004218 .
+_:ECKZ6R rset:hasInput _:FZQMSY .
+_:ECKZ6R rset:hasOutput _:VRLH4Q .
+_:FZQMSY rset:description 'CSV results of a CA'.
+_:VRLH4Q rset:description 'relative Chronology (Allen Interval)'.
+_:ECKZ6R rset:next _:H85TY3 .
+_:H85TY3 a rset:PipeStep .
+_:H85TY3 rset:pipeState rset:end .
+_:H85TY3 rset:uses wd:Q74003194 .
+_:H85TY3 rset:hasInput _:BEXPYG .
+_:H85TY3 rset:hasOutput _:81TLG9 .
+_:BEXPYG rset:description 'relative Chronology (Allen Interval)'.
+_:81TLG9 rset:description 'RDF with time reasoning'.
