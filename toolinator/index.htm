@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Linked Pasts | toolinator</title>
+</head>
+
+<body>
+	<div class="header">
+		<h1>
+			<span id="header"><i class="fa fa-filter" aria-hidden="true"></i><i class="fa fa-cog" aria-hidden="true"></i> Linked Pasts <i>toolinator</i></span>
+		</h1>
+	</div>
+	<div class="container">
+		<div class="sidebar col-md-3">
+			<div>
+				<h4 class='col-md-6'></h4>
+			</div>
+			<!-- search box -->
+			<div>
+				<label class="sr-only" for="searchbox">Search</label>
+				<input type="text" class="form-control" id="searchbox" placeholder="">
+				<span class="glyphicon glyphicon-search search-icon"></span>
+			</div>
+			<br>
+			<!--filters: sidebar -->
+			<div class="well">
+				<fieldset id="level_criteria">
+					<legend>entry level</legend>
+				</fieldset>
+			</div>
+			<div class="well">
+				<fieldset id="consumes_criteria">
+					<legend>consumes LOD?</legend>
+				</fieldset>
+			</div>
+			<div class="well">
+				<fieldset id="produces_criteria">
+					<legend>produces LOD?</legend>
+				</fieldset>
+			</div>
+			<div class="well">
+				<fieldset id="input_criteria">
+					<legend>input format</legend>
+				</fieldset>
+			</div>
+			<div class="well">
+				<fieldset id="output_criteria">
+					<legend>output format</legend>
+				</fieldset>
+			</div>
+		</div>
+		<div class="col-md-9">
+			<div>
+				<h4 class=''>matching tools: <span id="total_data"></span></h4>
+				<h4 class=''></h4>
+			</div>
+			<div class="movies content row" id="data"> </div>
+		</div>
+	</div>
+	<div class="footer">
+		<p>
+			<span style="float:left;">Linked Pasts | Linked Pipes | turtlenator | v0.1</span>
+			<span style="float:right;"><i>build by Linked Pasts Network (<a href='https://github.com/LinkedPasts/LinkedPipes' target='_blank'>git</a>)</i></span>
+		</p>
+	</div>
+
+	<!-- Template for Filter Results -->
+	<script id="main_template" type="text/html">
+		<div class="col-md-4 movie" onmouseover="highlight('<%= id %>',0)" onmouseout='resethighlight();' onclick="window.open('<%= url %>','_blank')">
+				<div class="thumbnail" id="<%= id %>">
+					<div class="caption">
+						<h5><%= _fid %>. <%= name %></h5>
+						<div class="outline" type="hovereffect">
+						</div>
+						<div class="detail">
+							<dl>
+								<dt><i><%= description %></i></dt>
+								<dt style="margin-top: 20px;">wikidata id: <%= id %></dt>
+								<dt style="margin-top: 20px;">entry date: <%= date %></dt>
+								<dt style="margin-top: 20px;">level: <%= level %></dt>
+								<dt style="margin-top: 20px;">consumes/produces LOD: <%= consumes %>/<%= produces %></dt>
+								<dt style="margin-top: 20px;">input formats: <%= input %></dt>
+								<dt style="margin-top: 20px;">output formats: <%= output %></dt>
+								<dt style="margin-top: 20px;">links: <%= link %></dt>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+		</script>
+	<!-- Assets CSS -->
+	<link href="css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
+	<link href="css/jquery-ui-1.10.2.custom.min.css" media="screen" rel="stylesheet" type="text/css">
+	<link href="css/stream.css" media="screen" rel="stylesheet" type="text/css">
+	<!-- jQuery -->
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js" type="text/javascript"></script>
+	<!-- Filter.js -->
+	<script src="js/filter.js" type="text/javascript"></script>
+	<!-- Filter Action -->
+	<script src="js/TripleStore.js" type="text/javascript"></script>
+	<script src="js/action.js" type="text/javascript"></script>
+	<style>
+		@font-face {
+			font-family: "Roboto";
+			src: url("fonts/Roboto-Regular.eot");
+			src: url("fonts/Roboto-Regular.eot?#iefix") format('embedded-opentype'),
+				url("fonts/Roboto-Regular.woff2") format('woff2'),
+				url("fonts/Roboto-Regular.woff") format('woff'),
+				url("fonts/Roboto-Regular.ttf") format('truetype');
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		h4 {
+			color: black !important;
+			padding: 0 !important;
+			font-size: 14px;
+		}
+
+		.col-md-6 {
+			width: 90% !important;
+			color: black !important;
+			margin-bottom: 0px;
+			margin-top: 30px;
+			font-weight: 600;
+		}
+
+		.thumbnail {
+			min-height: 500px !important;
+			height: 175px !important;
+			background-color: #621e4b;
+			border: none;
+			cursor: pointer;
+			color: white !important;
+		}
+
+		.active {
+			background-color: #892a69;
+		}
+
+		.form-control {
+			background-color: white !important;
+		}
+
+		/* search */
+		.well {
+			background-color: #b03686 !important;
+			border: none;
+			color: black;
+		}
+
+		/* filter menus */
+		.container {
+			width: calc(100% - 20px);
+			margin: 10px !important;
+			background-color: #1c1c1c !important;
+		}
+
+		/* main window */
+		.col-md-3 {
+			width: 300px !important;
+		}
+
+		/* sidebar */
+		.col-md-9 {
+			width: calc(100% - 335px);
+			margin-left: 35px;
+		}
+
+		/* rechts von sidebar sidebar plus hier = 100% */
+		.col-md-4 {
+			width: calc(50%) !important;
+		}
+
+		/* thumbnails */
+		/*h1 {font-size: 18px; margin-top: 5px;}*/
+		h3 {
+			font-size: 18px;
+			margin-bottom: 40px;
+			margin-top: 5px;
+		}
+
+		h4 {
+			font-weight: 600 !important;
+			color: white !important;
+			font-size: 20px;
+			margin: 20px;
+			text-align: right;
+		}
+
+		h5 {
+			font-size: 18px;
+			margin-bottom: 20px;
+			margin-top: 5px;
+			color: white !important;
+			font-weight: normal;
+		}
+
+		legend {
+			border-style: none;
+			margin-bottom: 5px;
+			color: white;
+		}
+
+		.sidebar legend {
+			font-weight: 600 !important;
+		}
+
+		.navientry {
+			margin-right: 10px;
+			margin-left: 10px;
+			float: left;
+		}
+
+		.navires {
+			margin-right: 10px;
+			margin-left: 10px;
+			float: right;
+			font-size: 16px;
+		}
+
+		.navihead {
+			margin-right: 20px;
+			clear: both;
+			float: left;
+		}
+
+		.checkbox label {
+			font-weight: 300 !important;
+			color: white !important;
+		}
+
+		.header {
+			background-color: #121212;
+			padding: 20px;
+			color: #fff;
+			height: 110px;
+		}
+
+		dt {
+			color: white;
+			font-weight: 300 !important;
+		}
+	</style>
+	<link href="css/style.css" media="screen" rel="stylesheet" type="text/css">
+	<link href="css/vendor/font-awesome.min.css" media="screen" rel="stylesheet" type="text/css">
+</body>
+
+</html>
