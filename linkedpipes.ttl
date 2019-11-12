@@ -77,6 +77,21 @@ wd:Q74526175 rset:outputFormat rset:TTL.
 wd:Q74526175 rset:outputFormat rset:JSON.
 wd:Q74526175 rset:outputFormat rset:SVG.
 
+# Peripleo
+wd:Q74693165 a rset:Tool .
+wd:Q74693165 a rset:LinkedTool .
+wd:Q74693165 rset:name 'Peripleo'.
+wd:Q74693165 rset:wikidataid 'Q74693165'.
+wd:Q74693165 rset:description 'Peripleo is a search engine to data maintained by partners of Pelagios Commons, a Digital Humanities initative aiming to foster better linkages between online resources documenting the past.'.
+wd:Q74693165 rset:dateOfEntry '2019-11-12 16:26:50'.
+wd:Q74693165 rset:link <https://peripleo.pelagios.org>.
+wd:Q74693165 rset:link <https://github.com/pelagios/peripleo2>.
+wd:Q74693165 rset:entryLevel rset:beginner.
+wd:Q74693165 rset:consumesLOD 'false'.
+wd:Q74693165 rset:producesLOD 'false'.
+wd:Q74693165 rset:inputFormat rset:HTML.
+wd:Q74693165 rset:outputFormat rset:HTML.
+
 # Relative Chronology Pipe
 pipe:G8JR1EZL a rset:Pipe .
 pipe:G8JR1EZL rset:name 'Relative Chronology Pipe'.
