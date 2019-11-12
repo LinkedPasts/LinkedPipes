@@ -72,7 +72,7 @@ TS.query = (sparql, callback) => {
                             obj.url = "http://www.wikidata.org/entity/" + bindings[item]['id'].value;
                             arrIn.push(bindings[item]['input'].value);
                             arrOut.push(bindings[item]['output'].value);
-                            arrLinks.push(bindings[item]['link'].value);
+                            arrLinks.push("<br>" + bindings[item]['link'].value);
                         }
                     }
                     arrIn = remDoub(arrIn);
@@ -80,7 +80,8 @@ TS.query = (sparql, callback) => {
                     arrLinks = remDoub(arrLinks);
                     obj.input = arrIn;
                     obj.output = arrOut;
-                    obj.link = arrLinks;
+                    let links = arrLinks.toString();
+                    obj.link = links.replace(",", "");
                     arr.push(obj);
                 }
                 console.log(arr);
