@@ -92,6 +92,20 @@ wd:Q74693165 rset:producesLOD 'false'.
 wd:Q74693165 rset:inputFormat rset:HTML.
 wd:Q74693165 rset:outputFormat rset:HTML.
 
+# cURL
+wd:Q286306 a rset:Tool .
+wd:Q286306 a rset:LinkedTool .
+wd:Q286306 rset:name 'cURL'.
+wd:Q286306 rset:wikidataid 'Q286306'.
+wd:Q286306 rset:description 'free file transfer software'.
+wd:Q286306 rset:dateOfEntry '2019-11-12 16:36:55'.
+wd:Q286306 rset:link <https://github.com/curl/curl>.
+wd:Q286306 rset:entryLevel rset:advanced.
+wd:Q286306 rset:consumesLOD 'false'.
+wd:Q286306 rset:producesLOD 'false'.
+wd:Q286306 rset:inputFormat rset:commandline.
+wd:Q286306 rset:outputFormat rset:commandline.
+
 # Relative Chronology Pipe
 pipe:G8JR1EZL a rset:Pipe .
 pipe:G8JR1EZL rset:name 'Relative Chronology Pipe'.
