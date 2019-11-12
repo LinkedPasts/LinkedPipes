@@ -340,7 +340,7 @@ let createToolTTL = () => {
         if ($("#inp-link2").val().includes("http")) {
             ttl += $("#inp-wikidata").attr("uri") + " rset:link " + "<" + $('#inp-link2').val() + ">" + ".\r\n";
         }
-        if ($("#inp-link2").val().includes("http")) {
+        if ($("#inp-link3").val().includes("http")) {
             ttl += $("#inp-wikidata").attr("uri") + " rset:link " + "<" + $('#inp-link3').val() + ">" + ".\r\n";
         }
         ttl += $("#inp-wikidata").attr("uri") + " rset:entryLevel " + "" + $("#sel-level option:selected").val() + "" + ".\r\n";
@@ -506,7 +506,7 @@ let createPipeTTL = () => {
         ttl += "pipe:" + pipeID + " rset:name " + "'" + $('#inp-namep').val() + "'" + ".\r\n";
         ttl += "pipe:" + pipeID + " rset:description " + "'" + $('#inp-descriptionp').val() + "'" + ".\r\n";
         ttl += "pipe:" + pipeID + " rset:author " + "'" + $('#inp-authorp').val() + "'" + ".\r\n";
-        ttl += "pipe:" + pipeID + " rset:rset:dateOfEntry " + "'" + formatted_date + "'" + ".\r\n";
+        ttl += "pipe:" + pipeID + " rset:dateOfEntry " + "'" + formatted_date + "'" + ".\r\n";
         let pipeStepID1 = UUID.getHashDigits(6);
         let pipeStepID2 = UUID.getHashDigits(6);
         let pipeStepID3 = UUID.getHashDigits(6);
