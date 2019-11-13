@@ -510,6 +510,7 @@ let createPipeTTL = () => {
         ttl += "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\r\n\r\n";
         let current_datetime = new Date()
         let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds();
+        ttl += "# " + $('#inp-name').val() + "\r\n";
         ttl += pipeURL + " a " + "rset:Pipe " + ".\r\n";
         ttl += pipeURL + " rset:name " + "'" + $('#inp-namep').val() + "'" + ".\r\n";
         ttl += pipeURL + " rset:description " + "'" + $('#inp-descriptionp').val() + "'" + ".\r\n";
