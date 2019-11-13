@@ -322,60 +322,65 @@ let createToolTTL = () => {
         $("#alertdiv").hide();
         $("#successdiv").show();
         // create triples
+        let toolID = UUID.getHashDigits(8);
+        let toolURI = "tool:" + toolID;
         let ttl = "";
         ttl += "@prefix rset: <http://rsetools.squirrel.link#> .\r\n";
+        ttl += "@prefix tool: <http://linkedpipes.xyz/tools#> .\r\n";
+        ttl += "@prefix pipe: <http://linkedpipes.xyz/pipes#> .\r\n";
         ttl += "@prefix wd: <http://www.wikidata.org/entity/> .\r\n";
         ttl += "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\r\n\r\n";
         let current_datetime = new Date()
         let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds();
         ttl += "# " + $('#inp-name').val() + "\r\n";
-        ttl += $("#inp-wikidata").attr("uri") + " a " + "rset:Tool " + ".\r\n";
-        ttl += $("#inp-wikidata").attr("uri") + " a " + "rset:LinkedTool " + ".\r\n";
-        ttl += $("#inp-wikidata").attr("uri") + " rset:name " + "'" + $('#inp-name').val() + "'" + ".\r\n";
-        ttl += $("#inp-wikidata").attr("uri") + " rset:wikidataid " + "'" + $("#inp-wikidata").attr("uri").replace("wd:", "") + "'" + ".\r\n";
-        ttl += $("#inp-wikidata").attr("uri") + " rset:description " + "'" + $('#inp-description').val() + "'" + ".\r\n";
-        ttl += $("#inp-wikidata").attr("uri") + " rset:dateOfEntry " + "'" + formatted_date + "'" + ".\r\n";
+        ttl += toolURI + " a " + "rset:Tool " + ".\r\n";
+        ttl += toolURI + " a " + "rset:LinkedTool " + ".\r\n";
+        ttl += toolURI + " owl:sameAs " + "" + $("#inp-wikidata").attr("uri") + "" + ".\r\n";
+        ttl += toolURI + " rset:name " + "'" + $('#inp-name').val() + "'" + ".\r\n";
+        ttl += toolURI + " rset:wikidataid " + "'" + $("#inp-wikidata").attr("uri").replace("wd:", "") + "'" + ".\r\n";
+        ttl += toolURI + " rset:description " + "'" + $('#inp-description').val() + "'" + ".\r\n";
+        ttl += toolURI + " rset:dateOfEntry " + "'" + formatted_date + "'" + ".\r\n";
         if ($("#inp-link1").val().includes("http")) {
-            ttl += $("#inp-wikidata").attr("uri") + " rset:link " + "<" + $('#inp-link1').val() + ">" + ".\r\n";
+            ttl += toolURI + " rset:link " + "<" + $('#inp-link1').val() + ">" + ".\r\n";
         }
         if ($("#inp-link2").val().includes("http")) {
-            ttl += $("#inp-wikidata").attr("uri") + " rset:link " + "<" + $('#inp-link2').val() + ">" + ".\r\n";
+            ttl += toolURI + " rset:link " + "<" + $('#inp-link2').val() + ">" + ".\r\n";
         }
         if ($("#inp-link3").val().includes("http")) {
-            ttl += $("#inp-wikidata").attr("uri") + " rset:link " + "<" + $('#inp-link3').val() + ">" + ".\r\n";
+            ttl += toolURI + " rset:link " + "<" + $('#inp-link3').val() + ">" + ".\r\n";
         }
-        ttl += $("#inp-wikidata").attr("uri") + " rset:entryLevel " + "" + $("#sel-level option:selected").val() + "" + ".\r\n";
-        ttl += $("#inp-wikidata").attr("uri") + " rset:consumesLOD " + "'" + $("#sel-consumeslod option:selected").val() + "'" + ".\r\n";
-        ttl += $("#inp-wikidata").attr("uri") + " rset:producesLOD " + "'" + $("#sel-produceslod option:selected").val() + "'" + ".\r\n";
+        ttl += toolURI + " rset:entryLevel " + "" + $("#sel-level option:selected").val() + "" + ".\r\n";
+        ttl += toolURI + " rset:consumesLOD " + "'" + $("#sel-consumeslod option:selected").val() + "'" + ".\r\n";
+        ttl += toolURI + " rset:producesLOD " + "'" + $("#sel-produceslod option:selected").val() + "'" + ".\r\n";
         if ($("#sel-informat1 option:selected").val() != "-1") {
-            ttl += $("#inp-wikidata").attr("uri") + " rset:inputFormat " + "" + $("#sel-informat1 option:selected").val() + "" + ".\r\n";
+            ttl += toolURI + " rset:inputFormat " + "" + $("#sel-informat1 option:selected").val() + "" + ".\r\n";
         }
         if ($("#sel-informat2 option:selected").val() != "-1") {
-            ttl += $("#inp-wikidata").attr("uri") + " rset:inputFormat " + "" + $("#sel-informat2 option:selected").val() + "" + ".\r\n";
+            ttl += toolURI + " rset:inputFormat " + "" + $("#sel-informat2 option:selected").val() + "" + ".\r\n";
         }
         if ($("#sel-informat3 option:selected").val() != "-1") {
-            ttl += $("#inp-wikidata").attr("uri") + " rset:inputFormat " + "" + $("#sel-informat3 option:selected").val() + "" + ".\r\n";
+            ttl += toolURI + " rset:inputFormat " + "" + $("#sel-informat3 option:selected").val() + "" + ".\r\n";
         }
         if ($("#sel-informat4 option:selected").val() != "-1") {
-            ttl += $("#inp-wikidata").attr("uri") + " rset:inputFormat " + "" + $("#sel-informat4 option:selected").val() + "" + ".\r\n";
+            ttl += toolURI + " rset:inputFormat " + "" + $("#sel-informat4 option:selected").val() + "" + ".\r\n";
         }
         if ($("#sel-informat5 option:selected").val() != "-1") {
-            ttl += $("#inp-wikidata").attr("uri") + " rset:inputFormat " + "" + $("#sel-informat5 option:selected").val() + "" + ".\r\n";
+            ttl += toolURI + " rset:inputFormat " + "" + $("#sel-informat5 option:selected").val() + "" + ".\r\n";
         }
         if ($("#sel-outformat1 option:selected").val() != "-1") {
-            ttl += $("#inp-wikidata").attr("uri") + " rset:outputFormat " + "" + $("#sel-outformat1 option:selected").val() + "" + ".\r\n";
+            ttl += toolURI + " rset:outputFormat " + "" + $("#sel-outformat1 option:selected").val() + "" + ".\r\n";
         }
         if ($("#sel-outformat2 option:selected").val() != "-1") {
-            ttl += $("#inp-wikidata").attr("uri") + " rset:outputFormat " + "" + $("#sel-outformat2 option:selected").val() + "" + ".\r\n";
+            ttl += toolURI + " rset:outputFormat " + "" + $("#sel-outformat2 option:selected").val() + "" + ".\r\n";
         }
         if ($("#sel-outformat3 option:selected").val() != "-1") {
-            ttl += $("#inp-wikidata").attr("uri") + " rset:outputFormat " + "" + $("#sel-outformat3 option:selected").val() + "" + ".\r\n";
+            ttl += toolURI + " rset:outputFormat " + "" + $("#sel-outformat3 option:selected").val() + "" + ".\r\n";
         }
         if ($("#sel-outformat4 option:selected").val() != "-1") {
-            ttl += $("#inp-wikidata").attr("uri") + " rset:outputFormat " + "" + $("#sel-outformat4 option:selected").val() + "" + ".\r\n";
+            ttl += toolURI + " rset:outputFormat " + "" + $("#sel-outformat4 option:selected").val() + "" + ".\r\n";
         }
         if ($("#sel-outformat5 option:selected").val() != "-1") {
-            ttl += $("#inp-wikidata").attr("uri") + " rset:outputFormat " + "" + $("#sel-outformat5 option:selected").val() + "" + ".\r\n";
+            ttl += toolURI + " rset:outputFormat " + "" + $("#sel-outformat5 option:selected").val() + "" + ".\r\n";
         }
         $("#hiddenclipboard").val(ttl);
     }
@@ -496,25 +501,27 @@ let createPipeTTL = () => {
         $("#successdivp").show();
         // create triples
         let pipeID = UUID.getHashDigits(8);
+        let pipeURL = "tool:" + pipeID;
         let ttl = "";
         ttl += "@prefix rset: <http://rsetools.squirrel.link#> .\r\n";
+        ttl += "@prefix tool: <http://linkedpipes.xyz/tools#> .\r\n";
         ttl += "@prefix pipe: <http://linkedpipes.xyz/pipes#> .\r\n";
         ttl += "@prefix wd: <http://www.wikidata.org/entity/> .\r\n";
         ttl += "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\r\n\r\n";
         let current_datetime = new Date()
         let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds();
-        ttl += "pipe:" + pipeID + " a " + "rset:Pipe " + ".\r\n";
-        ttl += "pipe:" + pipeID + " rset:name " + "'" + $('#inp-namep').val() + "'" + ".\r\n";
-        ttl += "pipe:" + pipeID + " rset:description " + "'" + $('#inp-descriptionp').val() + "'" + ".\r\n";
-        ttl += "pipe:" + pipeID + " rset:author " + "'" + $('#inp-authorp').val() + "'" + ".\r\n";
-        ttl += "pipe:" + pipeID + " rset:dateOfEntry " + "'" + formatted_date + "'" + ".\r\n";
+        ttl += pipeURL + " a " + "rset:Pipe " + ".\r\n";
+        ttl += pipeURL + " rset:name " + "'" + $('#inp-namep').val() + "'" + ".\r\n";
+        ttl += pipeURL + " rset:description " + "'" + $('#inp-descriptionp').val() + "'" + ".\r\n";
+        ttl += pipeURL + " rset:author " + "'" + $('#inp-authorp').val() + "'" + ".\r\n";
+        ttl += pipeURL + " rset:dateOfEntry " + "'" + formatted_date + "'" + ".\r\n";
         let pipeStepID1 = UUID.getHashDigits(6);
         let pipeStepID2 = UUID.getHashDigits(6);
         let pipeStepID3 = UUID.getHashDigits(6);
         let pipeStepID4 = UUID.getHashDigits(6);
         let pipeStepID5 = UUID.getHashDigits(6);
         if ($("#pipe1").prop('checked')) {
-            ttl += "pipe:" + pipeID + " rset:next " + "_:" + pipeStepID1 + " .\r\n";
+            ttl += pipeURL + " rset:next " + "_:" + pipeStepID1 + " .\r\n";
             ttl += "_:" + pipeStepID1 + " a " + "rset:PipeStep " + ".\r\n";
             ttl += "_:" + pipeStepID1 + " rset:pipeState " + $("#sel-pipestate1 option:selected").val() + " .\r\n";
             ttl += "_:" + pipeStepID1 + " rset:uses " + $("#sel-pipetool1 option:selected").val() + " .\r\n";
