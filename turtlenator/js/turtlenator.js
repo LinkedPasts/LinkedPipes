@@ -501,7 +501,7 @@ let createPipeTTL = () => {
         $("#successdivp").show();
         // create triples
         let pipeID = UUID.getHashDigits(8);
-        let pipeURL = "tool:" + pipeID;
+        let pipeURL = "pipe:" + pipeID;
         let ttl = "";
         ttl += "@prefix rset: <http://rsetools.squirrel.link#> .\r\n";
         ttl += "@prefix tool: <http://linkedpipes.xyz/tools#> .\r\n";
