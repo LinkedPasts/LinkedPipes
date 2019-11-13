@@ -5,7 +5,6 @@ let initModalCreateTool = (result) => {
         TS.query("SELECT * WHERE { ?s a rset:EntryLevel. ?s rdfs:label ?label.} ORDER BY ASC(?label)", fillLevel);
         TS.query("SELECT * WHERE { ?s a rset:InputFormat. ?s rdfs:label ?label.} ORDER BY ASC(?label)", fillInputFormat);
         TS.query("SELECT * WHERE { ?s a rset:OutputFormat. ?s rdfs:label ?label.} ORDER BY ASC(?label)", fillOutputFormat);
-        TS.queryWikidata("SELECT * WHERE { ?s wdt:P31 wd:Q73899440; rdfs:label ?label. FILTER((LANG(?label)) = 'en') } ORDER BY (?label)", fillWikidata);
         modal.style.display = "block";
     }
     $("#btn-modal-create-tool-close").click(function() {
@@ -511,7 +510,7 @@ let createPipeTTL = () => {
         ttl += "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\r\n\r\n";
         let current_datetime = new Date()
         let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds();
-        ttl += "# " + $('#inp-name').val() + "\r\n";
+        ttl += "# " + $('#inp-namep').val() + "\r\n";
         ttl += pipeURL + " a " + "rset:Pipe " + ".\r\n";
         ttl += pipeURL + " rset:name " + "'" + $('#inp-namep').val() + "'" + ".\r\n";
         ttl += pipeURL + " rset:description " + "'" + $('#inp-descriptionp').val() + "'" + ".\r\n";
@@ -526,7 +525,7 @@ let createPipeTTL = () => {
             ttl += pipeURL + " rset:next " + "_:" + pipeStepID1 + " .\r\n";
             ttl += "_:" + pipeStepID1 + " a " + "rset:PipeStep " + ".\r\n";
             ttl += "_:" + pipeStepID1 + " rset:pipeState " + $("#sel-pipestate1 option:selected").val() + " .\r\n";
-            ttl += "_:" + pipeStepID1 + " rset:uses " + $("#sel-pipetool1 option:selected").val() + " .\r\n";
+            ttl += "_:" + pipeStepID1 + " rset:uses " + $("#sel-pipetool1 option:selected").val().replace("http://linkedpipes.xyz/tools#", "tool:") + " .\r\n";
             let pipeStepObjInID = UUID.getHashDigits(6);
             let pipeStepObjOutID = UUID.getHashDigits(6);
             ttl += "_:" + pipeStepID1 + " rset:hasInput " + "_:" + pipeStepObjInID + " .\r\n";
@@ -538,7 +537,7 @@ let createPipeTTL = () => {
             ttl += "_:" + pipeStepID1 + " rset:next " + "_:" + pipeStepID2 + " .\r\n";
             ttl += "_:" + pipeStepID2 + " a " + "rset:PipeStep " + ".\r\n";
             ttl += "_:" + pipeStepID2 + " rset:pipeState " + $("#sel-pipestate2 option:selected").val() + " .\r\n";
-            ttl += "_:" + pipeStepID2 + " rset:uses " + $("#sel-pipetool2 option:selected").val() + " .\r\n";
+            ttl += "_:" + pipeStepID2 + " rset:uses " + $("#sel-pipetool2 option:selected").val().replace("http://linkedpipes.xyz/tools#", "tool:") + " .\r\n";
             let pipeStepObjInID = UUID.getHashDigits(6);
             let pipeStepObjOutID = UUID.getHashDigits(6);
             ttl += "_:" + pipeStepID2 + " rset:hasInput " + "_:" + pipeStepObjInID + " .\r\n";
@@ -550,7 +549,7 @@ let createPipeTTL = () => {
             ttl += "_:" + pipeStepID2 + " rset:next " + "_:" + pipeStepID3 + " .\r\n";
             ttl += "_:" + pipeStepID3 + " a " + "rset:PipeStep " + ".\r\n";
             ttl += "_:" + pipeStepID3 + " rset:pipeState " + $("#sel-pipestate3 option:selected").val() + " .\r\n";
-            ttl += "_:" + pipeStepID3 + " rset:uses " + $("#sel-pipetool3 option:selected").val() + " .\r\n";
+            ttl += "_:" + pipeStepID3 + " rset:uses " + $("#sel-pipetool3 option:selected").val().replace("http://linkedpipes.xyz/tools#", "tool:") + " .\r\n";
             let pipeStepObjInID = UUID.getHashDigits(6);
             let pipeStepObjOutID = UUID.getHashDigits(6);
             ttl += "_:" + pipeStepID3 + " rset:hasInput " + "_:" + pipeStepObjInID + " .\r\n";
@@ -562,7 +561,7 @@ let createPipeTTL = () => {
             ttl += "_:" + pipeStepID3 + " rset:next " + "_:" + pipeStepID4 + " .\r\n";
             ttl += "_:" + pipeStepID4 + " a " + "rset:PipeStep " + ".\r\n";
             ttl += "_:" + pipeStepID4 + " rset:pipeState " + $("#sel-pipestate4 option:selected").val() + " .\r\n";
-            ttl += "_:" + pipeStepID4 + " rset:uses " + $("#sel-pipetool4 option:selected").val() + " .\r\n";
+            ttl += "_:" + pipeStepID4 + " rset:uses " + $("#sel-pipetool4 option:selected").val().replace("http://linkedpipes.xyz/tools#", "tool:") + " .\r\n";
             let pipeStepObjInID = UUID.getHashDigits(6);
             let pipeStepObjOutID = UUID.getHashDigits(6);
             ttl += "_:" + pipeStepID4 + " rset:hasInput " + "_:" + pipeStepObjInID + " .\r\n";
@@ -574,7 +573,7 @@ let createPipeTTL = () => {
             ttl += "_:" + pipeStepID4 + " rset:next " + "_:" + pipeStepID5 + " .\r\n";
             ttl += "_:" + pipeStepID5 + " a " + "rset:PipeStep " + ".\r\n";
             ttl += "_:" + pipeStepID5 + " rset:pipeState " + $("#sel-pipestate5 option:selected").val() + " .\r\n";
-            ttl += "_:" + pipeStepID5 + " rset:uses " + $("#sel-pipetool5 option:selected").val() + " .\r\n";
+            ttl += "_:" + pipeStepID5 + " rset:uses " + $("#sel-pipetool5 option:selected").val().replace("http://linkedpipes.xyz/tools#", "tool:") + " .\r\n";
             let pipeStepObjInID = UUID.getHashDigits(6);
             let pipeStepObjOutID = UUID.getHashDigits(6);
             ttl += "_:" + pipeStepID5 + " rset:hasInput " + "_:" + pipeStepObjInID + " .\r\n";
