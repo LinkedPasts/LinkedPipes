@@ -3,6 +3,7 @@
 # Credits: Linked Pasts Community
 
 @prefix rset: <http://rsetools.squirrel.link#> .
+@prefix tool: <http://linkedpipes.xyz/tools#> .
 @prefix pipe: <http://linkedpipes.xyz/pipes#> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix wdt: <http://www.wikidata.org/prop/direct/> .
