@@ -9,174 +9,182 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
-# Alligator Tool
-wd:Q74004218 a rset:Tool .
-wd:Q74004218 a rset:LinkedTool .
-wd:Q74004218 rset:name 'Alligator'.
-wd:Q74004218 rset:wikidataid 'Q74004218'.
-wd:Q74004218 rset:description 'Web app for transforming a correspondence analyses with fixed and floating time intervals to a relative chronology and RDF representation using Allens interval algebra.'.
-wd:Q74004218 rset:dateOfEntry '2019-11-12 11:53:12'.
-wd:Q74004218 rset:link <https://rgzm.github.io/alligator>.
-wd:Q74004218 rset:link <https://github.com/RGZM/alligator>.
-wd:Q74004218 rset:entryLevel rset:advanced.
-wd:Q74004218 rset:consumesLOD 'false'.
-wd:Q74004218 rset:producesLOD 'true'.
-wd:Q74004218 rset:inputFormat rset:CSV.
-wd:Q74004218 rset:outputFormat rset:CSV.
-wd:Q74004218 rset:outputFormat rset:TTL.
-wd:Q74004218 rset:outputFormat rset:HTML.
+# Alligator
+tool:JDAH36PP a rset:Tool .
+tool:JDAH36PP a rset:LinkedTool .
+tool:JDAH36PP owl:sameAs wd:Q74004218.
+tool:JDAH36PP rset:name 'Alligator'.
+tool:JDAH36PP rset:wikidataid 'Q74004218'.
+tool:JDAH36PP rset:description 'Web app for transforming a correspondence analyses with fixed and floating time intervals to a relative chronology and RDF representation using Allens interval algebra.'.
+tool:JDAH36PP rset:dateOfEntry '2019-11-13 8:50:6'.
+tool:JDAH36PP rset:link <https://rgzm.github.io/alligator>.
+tool:JDAH36PP rset:link <https://github.com/RGZM/alligator>.
+tool:JDAH36PP rset:entryLevel rset:advanced.
+tool:JDAH36PP rset:consumesLOD 'false'.
+tool:JDAH36PP rset:producesLOD 'true'.
+tool:JDAH36PP rset:inputFormat rset:CSV.
+tool:JDAH36PP rset:outputFormat rset:CSV.
+tool:JDAH36PP rset:outputFormat rset:TTL.
+tool:JDAH36PP rset:outputFormat rset:HTML.
 
 # Academic Meta Tool
-wd:Q74003194 a rset:Tool .
-wd:Q74003194 a rset:LinkedTool .
-wd:Q74003194 rset:name 'Academic Meta Tool'.
-wd:Q74003194 rset:wikidataid 'Q74003194'.
-wd:Q74003194 rset:description 'Webapp for modelling vagueness in graphs including reasoning.'.
-wd:Q74003194 rset:dateOfEntry '2019-11-12 11:55:56'.
-wd:Q74003194 rset:link <http://academic-meta-tool.xyz>.
-wd:Q74003194 rset:entryLevel rset:beginner.
-wd:Q74003194 rset:consumesLOD 'false'.
-wd:Q74003194 rset:producesLOD 'true'.
-wd:Q74003194 rset:inputFormat rset:JSON.
-wd:Q74003194 rset:outputFormat rset:CSV.
-wd:Q74003194 rset:outputFormat rset:TTL.
-wd:Q74003194 rset:outputFormat rset:HTML.
-wd:Q74003194 rset:outputFormat rset:CYPHER.
+tool:H9ASQQT5 a rset:Tool .
+tool:H9ASQQT5 a rset:LinkedTool .
+tool:H9ASQQT5 owl:sameAs wd:Q74003194.
+tool:H9ASQQT5 rset:name 'Academic Meta Tool'.
+tool:H9ASQQT5 rset:wikidataid 'Q74003194'.
+tool:H9ASQQT5 rset:description 'Webapp for modelling vagueness in graphs including reasoning.'.
+tool:H9ASQQT5 rset:dateOfEntry '2019-11-13 8:51:29'.
+tool:H9ASQQT5 rset:link <http://academic-meta-tool.xyz>.
+tool:H9ASQQT5 rset:entryLevel rset:beginner.
+tool:H9ASQQT5 rset:consumesLOD 'false'.
+tool:H9ASQQT5 rset:producesLOD 'true'.
+tool:H9ASQQT5 rset:inputFormat rset:JSON.
+tool:H9ASQQT5 rset:outputFormat rset:CSV.
+tool:H9ASQQT5 rset:outputFormat rset:TTL.
+tool:H9ASQQT5 rset:outputFormat rset:HTML.
+tool:H9ASQQT5 rset:outputFormat rset:CYPHER.
 
 # SPARQLing Unicorn QGIS Plugin
-wd:Q74005133 a rset:Tool .
-wd:Q74005133 a rset:LinkedTool .
-wd:Q74005133 rset:name 'SPARQLing Unicorn QGIS Plugin'.
-wd:Q74005133 rset:wikidataid 'Q74005133'.
-wd:Q74005133 rset:description 'Plugin to add a layer in QGIS from Linked Data SPARQL endpoints.'.
-wd:Q74005133 rset:dateOfEntry '2019-11-12 11:58:40'.
-wd:Q74005133 rset:link <https://plugins.qgis.org/plugins/sparqlunicorn/>.
-wd:Q74005133 rset:link <https://github.com/sparqlunicorn/sparqlunicornGoesGIS>.
-wd:Q74005133 rset:entryLevel rset:beginner.
-wd:Q74005133 rset:consumesLOD 'true'.
-wd:Q74005133 rset:producesLOD 'false'.
-wd:Q74005133 rset:inputFormat rset:SPARQL.
-wd:Q74005133 rset:outputFormat rset:SHP.
-wd:Q74005133 rset:outputFormat rset:GEOJSON.
+tool:IV2WF71Z a rset:Tool .
+tool:IV2WF71Z a rset:LinkedTool .
+tool:IV2WF71Z owl:sameAs wd:Q74005133.
+tool:IV2WF71Z rset:name 'SPARQLing Unicorn QGIS Plugin'.
+tool:IV2WF71Z rset:wikidataid 'Q74005133'.
+tool:IV2WF71Z rset:description 'Plugin to add a layer in QGIS from Linked Data SPARQL endpoints.'.
+tool:IV2WF71Z rset:dateOfEntry '2019-11-13 8:52:34'.
+tool:IV2WF71Z rset:link <https://plugins.qgis.org/plugins/sparqlunicorn/>.
+tool:IV2WF71Z rset:link <https://github.com/sparqlunicorn/sparqlunicornGoesGIS>.
+tool:IV2WF71Z rset:entryLevel rset:beginner.
+tool:IV2WF71Z rset:consumesLOD 'true'.
+tool:IV2WF71Z rset:producesLOD 'false'.
+tool:IV2WF71Z rset:inputFormat rset:SPARQL.
+tool:IV2WF71Z rset:outputFormat rset:SHP.
+tool:IV2WF71Z rset:outputFormat rset:GEOJSON.
 
 # xTriples
-wd:Q74526175 a rset:Tool .
-wd:Q74526175 a rset:LinkedTool .
-wd:Q74526175 rset:name 'xTriples'.
-wd:Q74526175 rset:wikidataid 'Q74526175'.
-wd:Q74526175 rset:description 'Web services for extracting RDF from XML'.
-wd:Q74526175 rset:dateOfEntry '2019-11-12 14:40:19'.
-wd:Q74526175 rset:link <https://github.com/digicademy/xtriples>.
-wd:Q74526175 rset:link <https://xtriples.lod.academy/index.html>.
-wd:Q74526175 rset:entryLevel rset:advanced.
-wd:Q74526175 rset:consumesLOD 'false'.
-wd:Q74526175 rset:producesLOD 'true'.
-wd:Q74526175 rset:inputFormat rset:XML.
-wd:Q74526175 rset:outputFormat rset:RDF-XML.
-wd:Q74526175 rset:outputFormat rset:TTL.
-wd:Q74526175 rset:outputFormat rset:JSON.
-wd:Q74526175 rset:outputFormat rset:SVG.
+tool:MS8B972N a rset:Tool .
+tool:MS8B972N a rset:LinkedTool .
+tool:MS8B972N owl:sameAs wd:Q74526175.
+tool:MS8B972N rset:name 'xTriples'.
+tool:MS8B972N rset:wikidataid 'Q74526175'.
+tool:MS8B972N rset:description 'Web services for extracting RDF from XML'.
+tool:MS8B972N rset:dateOfEntry '2019-11-13 8:53:42'.
+tool:MS8B972N rset:link <https://github.com/digicademy/xtriples>.
+tool:MS8B972N rset:link <https://xtriples.lod.academy/index.html>.
+tool:MS8B972N rset:entryLevel rset:advanced.
+tool:MS8B972N rset:consumesLOD 'false'.
+tool:MS8B972N rset:producesLOD 'true'.
+tool:MS8B972N rset:inputFormat rset:XML.
+tool:MS8B972N rset:outputFormat rset:RDF-XML.
+tool:MS8B972N rset:outputFormat rset:TTL.
+tool:MS8B972N rset:outputFormat rset:JSON.
+tool:MS8B972N rset:outputFormat rset:SVG.
 
 # Recogito
-wd:Q74692524 a rset:Tool .
-wd:Q74692524 a rset:LinkedTool .
-wd:Q74692524 rset:name 'Recogito'.
-wd:Q74692524 rset:wikidataid 'Q74692524'.
-wd:Q74692524 rset:description 'Semantic Annotation tool for texts and images, developed by Pelagios Commons'.
-wd:Q74692524 rset:dateOfEntry '2019-11-12 16:59:36'.
-wd:Q74692524 rset:link <http://github.com/pelagios/recogito2>.
-wd:Q74692524 rset:link <https://recogito.pelagios.org>.
-wd:Q74692524 rset:entryLevel rset:beginner.
-wd:Q74692524 rset:consumesLOD 'false'.
-wd:Q74692524 rset:producesLOD 'true'.
-wd:Q74692524 rset:inputFormat rset:PNG.
-wd:Q74692524 rset:inputFormat rset:JPG.
-wd:Q74692524 rset:inputFormat rset:PLAIN-TEXT.
-wd:Q74692524 rset:inputFormat rset:TIFF.
-wd:Q74692524 rset:outputFormat rset:CSV.
-wd:Q74692524 rset:outputFormat rset:TTL.
-wd:Q74692524 rset:outputFormat rset:RDF-XML.
+tool:7FGCEY65 a rset:Tool .
+tool:7FGCEY65 a rset:LinkedTool .
+tool:7FGCEY65 owl:sameAs wd:Q74692524.
+tool:7FGCEY65 rset:name 'Recogito'.
+tool:7FGCEY65 rset:wikidataid 'Q74692524'.
+tool:7FGCEY65 rset:description 'Semantic Annotation tool for texts and images, developed by Pelagios Commons'.
+tool:7FGCEY65 rset:dateOfEntry '2019-11-13 8:54:52'.
+tool:7FGCEY65 rset:link <http://github.com/pelagios/recogito2>.
+tool:7FGCEY65 rset:link <https://recogito.pelagios.org>.
+tool:7FGCEY65 rset:entryLevel rset:beginner.
+tool:7FGCEY65 rset:consumesLOD 'false'.
+tool:7FGCEY65 rset:producesLOD 'true'.
+tool:7FGCEY65 rset:inputFormat rset:PNG.
+tool:7FGCEY65 rset:inputFormat rset:JPG.
+tool:7FGCEY65 rset:inputFormat rset:PLAIN-TEXT.
+tool:7FGCEY65 rset:outputFormat rset:CSV.
+tool:7FGCEY65 rset:outputFormat rset:TTL.
+tool:7FGCEY65 rset:outputFormat rset:RDF-XML.
 
 # Peripleo
-wd:Q74693165 a rset:Tool .
-wd:Q74693165 a rset:LinkedTool .
-wd:Q74693165 rset:name 'Peripleo'.
-wd:Q74693165 rset:wikidataid 'Q74693165'.
-wd:Q74693165 rset:description 'Peripleo is a search engine to data maintained by partners of Pelagios Commons, a Digital Humanities initative aiming to foster better linkages between online resources documenting the past.'.
-wd:Q74693165 rset:dateOfEntry '2019-11-12 16:26:50'.
-wd:Q74693165 rset:link <https://peripleo.pelagios.org>.
-wd:Q74693165 rset:link <https://github.com/pelagios/peripleo2>.
-wd:Q74693165 rset:entryLevel rset:beginner.
-wd:Q74693165 rset:consumesLOD 'false'.
-wd:Q74693165 rset:producesLOD 'false'.
-wd:Q74693165 rset:inputFormat rset:HTML.
-wd:Q74693165 rset:outputFormat rset:HTML.
+tool:SB8L1WQU a rset:Tool .
+tool:SB8L1WQU a rset:LinkedTool .
+tool:SB8L1WQU owl:sameAs wd:Q74693165.
+tool:SB8L1WQU rset:name 'Peripleo'.
+tool:SB8L1WQU rset:wikidataid 'Q74693165'.
+tool:SB8L1WQU rset:description 'Peripleo is a search engine to data maintained by partners of Pelagios Commons, a Digital Humanities initative aiming to foster better linkages between online resources documenting the past.'.
+tool:SB8L1WQU rset:dateOfEntry '2019-11-13 8:55:44'.
+tool:SB8L1WQU rset:link <https://peripleo.pelagios.org>.
+tool:SB8L1WQU rset:link <https://github.com/pelagios/peripleo2>.
+tool:SB8L1WQU rset:entryLevel rset:beginner.
+tool:SB8L1WQU rset:consumesLOD 'false'.
+tool:SB8L1WQU rset:producesLOD 'false'.
+tool:SB8L1WQU rset:inputFormat rset:HTML.
+tool:SB8L1WQU rset:outputFormat rset:HTML.
 
 # cURL
-wd:Q286306 a rset:Tool .
-wd:Q286306 a rset:LinkedTool .
-wd:Q286306 rset:name 'cURL'.
-wd:Q286306 rset:wikidataid 'Q286306'.
-wd:Q286306 rset:description 'free file transfer software'.
-wd:Q286306 rset:dateOfEntry '2019-11-12 16:36:55'.
-wd:Q286306 rset:link <https://github.com/curl/curl>.
-wd:Q286306 rset:entryLevel rset:advanced.
-wd:Q286306 rset:consumesLOD 'false'.
-wd:Q286306 rset:producesLOD 'false'.
-wd:Q286306 rset:inputFormat rset:commandline.
-wd:Q286306 rset:outputFormat rset:commandline.
+tool:822URG1I a rset:Tool .
+tool:822URG1I a rset:LinkedTool .
+tool:822URG1I owl:sameAs wd:Q286306.
+tool:822URG1I rset:name 'cURL'.
+tool:822URG1I rset:wikidataid 'Q286306'.
+tool:822URG1I rset:description 'free file transfer software'.
+tool:822URG1I rset:dateOfEntry '2019-11-13 8:56:31'.
+tool:822URG1I rset:link <https://github.com/curl/curl>.
+tool:822URG1I rset:entryLevel rset:advanced.
+tool:822URG1I rset:consumesLOD 'false'.
+tool:822URG1I rset:producesLOD 'false'.
+tool:822URG1I rset:inputFormat rset:commandline.
+tool:822URG1I rset:outputFormat rset:commandline.
 
 # WikidataQueryServiceR
-wd:Q74696020 a rset:Tool .
-wd:Q74696020 a rset:LinkedTool .
-wd:Q74696020 rset:name 'WikidataQueryServiceR'.
-wd:Q74696020 rset:wikidataid 'Q74696020'.
-wd:Q74696020 rset:description 'API Client Library for Wikidata Query Service'.
-wd:Q74696020 rset:dateOfEntry '2019-11-12 16:48:11'.
-wd:Q74696020 rset:link <https://github.com/bearloga/WikidataQueryServiceR>.
-wd:Q74696020 rset:link <https://cran.r-project.org/package=WikidataQueryServiceR>.
-wd:Q74696020 rset:link <https://github.com/sparqlunicorn/sparqlunicornGoesR>.
-wd:Q74696020 rset:entryLevel rset:advanced.
-wd:Q74696020 rset:consumesLOD 'false'.
-wd:Q74696020 rset:producesLOD 'true'.
-wd:Q74696020 rset:inputFormat rset:SPARQL.
-wd:Q74696020 rset:outputFormat rset:RDF-XML.
+tool:RGEZWA2Z a rset:Tool .
+tool:RGEZWA2Z a rset:LinkedTool .
+tool:RGEZWA2Z owl:sameAs wd:Q74696020.
+tool:RGEZWA2Z rset:name 'WikidataQueryServiceR'.
+tool:RGEZWA2Z rset:wikidataid 'Q74696020'.
+tool:RGEZWA2Z rset:description 'API Client Library for Wikidata Query Service'.
+tool:RGEZWA2Z rset:dateOfEntry '2019-11-13 8:57:24'.
+tool:RGEZWA2Z rset:link <https://github.com/bearloga/WikidataQueryServiceR>.
+tool:RGEZWA2Z rset:link <https://cran.r-project.org/package=WikidataQueryServiceR>.
+tool:RGEZWA2Z rset:link <https://github.com/sparqlunicorn/sparqlunicornGoesR>.
+tool:RGEZWA2Z rset:entryLevel rset:advanced.
+tool:RGEZWA2Z rset:consumesLOD 'false'.
+tool:RGEZWA2Z rset:producesLOD 'true'.
+tool:RGEZWA2Z rset:inputFormat rset:SPARQL.
+tool:RGEZWA2Z rset:outputFormat rset:RDF-XML.
 
 # SPARQLWrapper
-wd:Q74697234 a rset:Tool .
-wd:Q74697234 a rset:LinkedTool .
-wd:Q74697234 rset:name 'SPARQLWrapper'.
-wd:Q74697234 rset:wikidataid 'Q74697234'.
-wd:Q74697234 rset:description 'SPARQLWrapper is a simple Python wrapper around a SPARQL service to remotelly execute your queries. It helps in creating the query invokation and, possibly, convert the result into a more manageable format.'.
-wd:Q74697234 rset:dateOfEntry '2019-11-12 16:54:35'.
-wd:Q74697234 rset:link <https://github.com/rdflib/sparqlwrapper>.
-wd:Q74697234 rset:link <https://rdflib.github.io/sparqlwrapper/>.
-wd:Q74697234 rset:link <https://github.com/sparqlunicorn/sparqlunicornGoesPy>.
-wd:Q74697234 rset:entryLevel rset:advanced.
-wd:Q74697234 rset:consumesLOD 'false'.
-wd:Q74697234 rset:producesLOD 'true'.
-wd:Q74697234 rset:inputFormat rset:SPARQL.
-wd:Q74697234 rset:outputFormat rset:RDF-XML.
+tool:ZVX3UYLY a rset:Tool .
+tool:ZVX3UYLY a rset:LinkedTool .
+tool:ZVX3UYLY owl:sameAs wd:Q74697234.
+tool:ZVX3UYLY rset:name 'SPARQLWrapper'.
+tool:ZVX3UYLY rset:wikidataid 'Q74697234'.
+tool:ZVX3UYLY rset:description 'SPARQLWrapper is a simple Python wrapper around a SPARQL service to remotelly execute your queries. It helps in creating the query invokation and, possibly, convert the result into a more manageable format.'.
+tool:ZVX3UYLY rset:dateOfEntry '2019-11-13 8:58:17'.
+tool:ZVX3UYLY rset:link <https://github.com/rdflib/sparqlwrapper>.
+tool:ZVX3UYLY rset:link <https://rdflib.github.io/sparqlwrapper/>.
+tool:ZVX3UYLY rset:link <https://github.com/sparqlunicorn/sparqlunicornGoesPy>.
+tool:ZVX3UYLY rset:entryLevel rset:advanced.
+tool:ZVX3UYLY rset:consumesLOD 'false'.
+tool:ZVX3UYLY rset:producesLOD 'true'.
+tool:ZVX3UYLY rset:inputFormat rset:SPARQL.
+tool:ZVX3UYLY rset:outputFormat rset:RDF-XML.
 
 # Relative Chronology Pipe
-pipe:G8JR1EZL a rset:Pipe .
-pipe:G8JR1EZL rset:name 'Relative Chronology Pipe'.
-pipe:G8JR1EZL rset:description 'Pipe to create a relative chronology with time reasoning.'.
-pipe:G8JR1EZL rset:author 'Florian Thiery, Allard Mees'.
-pipe:G8JR1EZL rset:dateOfEntry '2019-11-12 12:3:52'.
-pipe:G8JR1EZL rset:next _:ECKZ6R .
-_:ECKZ6R a rset:PipeStep .
-_:ECKZ6R rset:pipeState rset:start .
-_:ECKZ6R rset:uses wd:Q74004218 .
-_:ECKZ6R rset:hasInput _:FZQMSY .
-_:ECKZ6R rset:hasOutput _:VRLH4Q .
-_:FZQMSY rset:description 'CSV results of a CA'.
-_:VRLH4Q rset:description 'relative Chronology (Allen Interval)'.
-_:ECKZ6R rset:next _:H85TY3 .
-_:H85TY3 a rset:PipeStep .
-_:H85TY3 rset:pipeState rset:end .
-_:H85TY3 rset:uses wd:Q74003194 .
-_:H85TY3 rset:hasInput _:BEXPYG .
-_:H85TY3 rset:hasOutput _:81TLG9 .
-_:BEXPYG rset:description 'relative Chronology (Allen Interval)'.
-_:81TLG9 rset:description 'RDF with time reasoning'.
+tool:E4TQIM9U a rset:Pipe .
+tool:E4TQIM9U rset:name 'Relative Chronology Pipe'.
+tool:E4TQIM9U rset:description 'Pipe to create a relative chronology with time reasoning.'.
+tool:E4TQIM9U rset:author 'Florian Thiery, Allard Mees'.
+tool:E4TQIM9U rset:dateOfEntry '2019-11-13 8:59:18'.
+tool:E4TQIM9U rset:next _:47EJZ3 .
+_:47EJZ3 a rset:PipeStep .
+_:47EJZ3 rset:pipeState rset:start .
+_:47EJZ3 rset:uses wd:Q74004218 .
+_:47EJZ3 rset:hasInput _:86B49D .
+_:47EJZ3 rset:hasOutput _:Q8TFC5 .
+_:86B49D rset:description 'CSV results of a CA'.
+_:Q8TFC5 rset:description 'relative Chronology (Allen Interval)'.
+_:47EJZ3 rset:next _:YDSJ4X .
+_:YDSJ4X a rset:PipeStep .
+_:YDSJ4X rset:pipeState rset:end .
+_:YDSJ4X rset:uses wd:Q74003194 .
+_:YDSJ4X rset:hasInput _:RVN3UN .
+_:YDSJ4X rset:hasOutput _:3YEZK1 .
+_:RVN3UN rset:description 'relative Chronology (Allen Interval)'.
+_:3YEZK1 rset:description 'RDF with time reasoning'.
