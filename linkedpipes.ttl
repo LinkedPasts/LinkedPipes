@@ -169,12 +169,12 @@ tool:ZVX3UYLY rset:inputFormat rset:SPARQL.
 tool:ZVX3UYLY rset:outputFormat rset:RDF-XML.
 
 # Relative Chronology Pipe
-tool:E4TQIM9U a rset:Pipe .
-tool:E4TQIM9U rset:name 'Relative Chronology Pipe'.
-tool:E4TQIM9U rset:description 'Pipe to create a relative chronology with time reasoning.'.
-tool:E4TQIM9U rset:author 'Florian Thiery, Allard Mees'.
-tool:E4TQIM9U rset:dateOfEntry '2019-11-13 8:59:18'.
-tool:E4TQIM9U rset:next _:47EJZ3 .
+pipe:E4TQIM9U a rset:Pipe .
+pipe:E4TQIM9U rset:name 'Relative Chronology Pipe'.
+pipe:E4TQIM9U rset:description 'Pipe to create a relative chronology with time reasoning.'.
+pipe:E4TQIM9U rset:author 'Florian Thiery, Allard Mees'.
+pipe:E4TQIM9U rset:dateOfEntry '2019-11-13 8:59:18'.
+pipe:E4TQIM9U rset:next _:47EJZ3 .
 _:47EJZ3 a rset:PipeStep .
 _:47EJZ3 rset:pipeState rset:start .
 _:47EJZ3 rset:uses wd:Q74004218 .
