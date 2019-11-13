@@ -177,7 +177,7 @@ pipe:E4TQIM9U rset:dateOfEntry '2019-11-13 8:59:18'.
 pipe:E4TQIM9U rset:next _:47EJZ3 .
 _:47EJZ3 a rset:PipeStep .
 _:47EJZ3 rset:pipeState rset:start .
-_:47EJZ3 rset:uses wd:Q74004218 .
+_:47EJZ3 rset:uses tool:JDAH36PP .
 _:47EJZ3 rset:hasInput _:86B49D .
 _:47EJZ3 rset:hasOutput _:Q8TFC5 .
 _:86B49D rset:description 'CSV results of a CA'.
@@ -185,7 +185,7 @@ _:Q8TFC5 rset:description 'relative Chronology (Allen Interval)'.
 _:47EJZ3 rset:next _:YDSJ4X .
 _:YDSJ4X a rset:PipeStep .
 _:YDSJ4X rset:pipeState rset:end .
-_:YDSJ4X rset:uses wd:Q74003194 .
+_:YDSJ4X rset:uses tool:H9ASQQT5 .
 _:YDSJ4X rset:hasInput _:RVN3UN .
 _:YDSJ4X rset:hasOutput _:3YEZK1 .
 _:RVN3UN rset:description 'relative Chronology (Allen Interval)'.
