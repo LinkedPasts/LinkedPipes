@@ -507,6 +507,7 @@ let createPipeTTL = () => {
         ttl += "@prefix tool: <http://linkedpipes.xyz/tools#> .\r\n";
         ttl += "@prefix pipe: <http://linkedpipes.xyz/pipes#> .\r\n";
         ttl += "@prefix wd: <http://www.wikidata.org/entity/> .\r\n";
+        ttl += "@prefix owl: <http://www.w3.org/2002/07/owl#> .\r\n";
         ttl += "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\r\n\r\n";
         let current_datetime = new Date()
         let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds();
