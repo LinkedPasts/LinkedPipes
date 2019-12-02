@@ -16,9 +16,9 @@
    id="svg8"
    inkscape:version="0.92.1 r15371"
    sodipodi:docname="linkedpipes3.svg"
-   inkscape:export-filename="D:\src\LinkedPipes\logo\linkedpipes.png"
-   inkscape:export-xdpi="254.00533"
-   inkscape:export-ydpi="254.00533">
+   inkscape:export-filename="D:\src\LinkedPipes\logo\linkedpipes_5000.png"
+   inkscape:export-xdpi="635.01331"
+   inkscape:export-ydpi="635.01331">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -29,8 +29,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="211.60421"
-     inkscape:cy="418.28555"
+     inkscape:cx="-131.56793"
+     inkscape:cy="425.27915"
      inkscape:document-units="mm"
      inkscape:current-layer="g4570"
      showgrid="false"
@@ -354,16 +354,6 @@
          d="m 195.49,794.99 c -0.864,1.009 -1.728,2.016 -2.587,3.024 0.87,-1 1.73,-2.01 2.59,-3.02 z"
          inkscape:connector-curvature="0"
          style="fill:#f9ae5a" />
-      <path
-         id="path4560"
-         d="m 281.87,211.94 c -32.003,-20.856 -41.674,-70.82 -19.587,-101.17 19.894,-27.342 58.951,-27.401 83.602,-0.128 22.013,24.358 26.297,58.582 11.023,88.039 0.27,-2.305 0.469,-4.619 0.826,-6.909 2.476,-15.853 -0.444,-29.789 -15,-38.877 -16.128,-10.07 -32.723,-9.17 -48.449,0.567 -14.187,8.781 -21.216,22.037 -18.605,38.965 1.03,6.68 4.07,13.03 6.19,19.52 z"
-         inkscape:connector-curvature="0"
-         style="fill:#fefefe" />
-      <path
-         id="path4562"
-         d="m 167.73,251.31 c -8.57,-8.368 -18.827,-15.614 -25.329,-25.36 -10.145,-15.206 -11.47,-33.332 -8.623,-51.146 6.788,-42.437 49.876,-59.846 84.588,-34.54 26.392,19.237 38.036,61.149 24.06,86.601 -0.908,-2.829 -2.495,-5.626 -2.615,-8.488 -0.722,-17.104 -7.169,-26.212 -23.145,-31.955 -17.511,-6.296 -38.655,-0.355 -50.206,14.106 -12.06,15.08 -11.67,30.46 1.26,50.78 z"
-         inkscape:connector-curvature="0"
-         style="fill:#fefefe" />
       <path
          id="path4568"
          d="m 167.14,251.18 c 0.849,0.94 1.7,1.881 2.548,2.818 -0.86,-0.94 -1.71,-1.88 -2.55,-2.82 z"
