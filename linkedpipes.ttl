@@ -198,7 +198,7 @@ tool:F2ADFAVY owl:sameAs wd:Q22094624.
 tool:F2ADFAVY rset:name 'Trismegistos'.
 tool:F2ADFAVY rset:wikidataid 'Q22094624'.
 tool:F2ADFAVY rset:description '  An interdisciplinary portal of the ancient world'.
-tool:F2ADFAVY rset:dateOfEntry '2019-12-13 12:22:8'.
+tool:F2ADFAVY rset:dateOfEntry '2019-12-13 12:22:08'.
 tool:F2ADFAVY rset:link <https://www.trismegistos.org>.
 tool:F2ADFAVY rset:entryLevel rset:advanced.
 tool:F2ADFAVY rset:consumesLOD 'false'.
