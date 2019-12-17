@@ -190,3 +190,21 @@ _:YDSJ4X rset:hasInput _:RVN3UN .
 _:YDSJ4X rset:hasOutput _:3YEZK1 .
 _:RVN3UN rset:description 'relative Chronology (Allen Interval)'.
 _:3YEZK1 rset:description 'RDF with time reasoning'.
+
+# Trismegistos
+tool:F2ADFAVY a rset:Tool .
+tool:F2ADFAVY a rset:LinkedTool .
+tool:F2ADFAVY owl:sameAs wd:Q22094624.
+tool:F2ADFAVY rset:name 'Trismegistos'.
+tool:F2ADFAVY rset:wikidataid 'Q22094624'.
+tool:F2ADFAVY rset:description '  An interdisciplinary portal of the ancient world'.
+tool:F2ADFAVY rset:dateOfEntry '2019-12-13 12:22:8'.
+tool:F2ADFAVY rset:link <https://www.trismegistos.org>.
+tool:F2ADFAVY rset:entryLevel rset:advanced.
+tool:F2ADFAVY rset:consumesLOD 'false'.
+tool:F2ADFAVY rset:producesLOD 'true'.
+tool:F2ADFAVY rset:outputFormat rset:CSV.
+tool:F2ADFAVY rset:outputFormat rset:GEOJSON.
+tool:F2ADFAVY rset:outputFormat rset:JSON-LD.
+tool:F2ADFAVY rset:outputFormat rset:RDF-XML.
+
