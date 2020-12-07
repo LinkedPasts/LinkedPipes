@@ -3,8 +3,8 @@
 # Credits: Linked Pasts Community
 
 @prefix rset: <http://rsetools.squirrel.link#> .
-@prefix tool: <http://linkedpipes.xyz/tools#> .
-@prefix pipe: <http://linkedpipes.xyz/pipes#> .
+@prefix tool: <http://lod.linkedpipes.xyz/data/tool/> .
+@prefix pipe: <http://lod.linkedpipes.xyz/data/pipe/> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix wdt: <http://www.wikidata.org/prop/direct/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -207,4 +207,3 @@ tool:F2ADFAVY rset:outputFormat rset:CSV.
 tool:F2ADFAVY rset:outputFormat rset:GEOJSON.
 tool:F2ADFAVY rset:outputFormat rset:JSON-LD.
 tool:F2ADFAVY rset:outputFormat rset:RDF-XML.
-

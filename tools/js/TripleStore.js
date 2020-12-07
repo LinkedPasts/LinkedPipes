@@ -3,7 +3,7 @@ let TS = {};
 TS.SPARQLQUERY = "https://java-dev.rgzm.de/rdf4j-server/repositories/linkedpipes";
 
 TS.PREFIXES =
-    "PREFIX rset: <http://rsetools.squirrel.link#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX pipe: <http://linkedpipes.xyz/pipes#>";
+    "PREFIX rset: <http://rsetools.squirrel.link#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX tool: <http://lod.linkedpipes.xyz/data/tool/>";
 
 TS.query = (sparql, callback) => {
     setTimeout(function() {
