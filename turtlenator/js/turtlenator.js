@@ -507,12 +507,14 @@ let createPipeTTL = () => {
         ttl += "@prefix pipe: <http://lod.linkedpipes.xyz/data/pipe/> .\r\n";
         ttl += "@prefix wd: <http://www.wikidata.org/entity/> .\r\n";
         ttl += "@prefix owl: <http://www.w3.org/2002/07/owl#> .\r\n";
+        ttl += "@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\r\n";
         ttl += "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\r\n\r\n";
         let current_datetime = new Date()
         let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds();
         ttl += "# " + $('#inp-namep').val() + "\r\n";
         ttl += pipeURL + " a " + "rset:Pipe " + ".\r\n";
         ttl += pipeURL + " rset:name " + "'" + $('#inp-namep').val() + "'" + ".\r\n";
+        ttl += pipeURL + " rdfs:label " + "'" + $('#inp-namep').val() + "'" + ".\r\n";
         ttl += pipeURL + " rset:description " + "'" + $('#inp-descriptionp').val() + "'" + ".\r\n";
         ttl += pipeURL + " rset:author " + "'" + $('#inp-authorp').val() + "'" + ".\r\n";
         ttl += pipeURL + " rset:dateOfEntry " + "'" + formatted_date + "'" + ".\r\n";
