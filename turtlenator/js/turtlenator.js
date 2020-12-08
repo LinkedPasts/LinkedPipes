@@ -328,6 +328,7 @@ let createToolTTL = () => {
         ttl += "@prefix tool: <http://lod.linkedpipes.xyz/data/tool/> .\r\n";
         ttl += "@prefix pipe: <http://lod.linkedpipes.xyz/data/pipe/> .\r\n";
         ttl += "@prefix wd: <http://www.wikidata.org/entity/> .\r\n";
+        ttl += "@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\r\n";
         ttl += "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\r\n\r\n";
         let current_datetime = new Date()
         let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds();
@@ -336,6 +337,7 @@ let createToolTTL = () => {
         ttl += toolURI + " a " + "rset:LinkedTool " + ".\r\n";
         ttl += toolURI + " owl:sameAs " + "" + $("#inp-wikidata").attr("uri") + "" + ".\r\n";
         ttl += toolURI + " rset:name " + "'" + $('#inp-name').val() + "'" + ".\r\n";
+        ttl += toolURI + " rdfs:label " + "'" + $('#inp-name').val() + "'" + ".\r\n";
         ttl += toolURI + " rset:wikidataid " + "'" + $("#inp-wikidata").attr("uri").replace("wd:", "") + "'" + ".\r\n";
         ttl += toolURI + " rset:description " + "'" + $('#inp-description').val() + "'" + ".\r\n";
         ttl += toolURI + " rset:dateOfEntry " + "'" + formatted_date + "'" + ".\r\n";
