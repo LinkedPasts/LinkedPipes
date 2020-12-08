@@ -141,6 +141,6 @@ var resethighlight = function() {
 }
 
 $(document).ready(function() {
-    let q = "SELECT DISTINCT * WHERE { ?s a rset:LinkedTool. ?s rset:name ?name. ?s rset:description ?description. ?s rset:dateOfEntry ?date. ?s rset:entryLevel ?level. ?s rset:consumesLOD ?consumes. ?s rset:producesLOD ?produces. ?s rset:inputFormat ?input. ?s rset:outputFormat ?output. ?s rset:wikidataid ?id. ?s rset:link ?link. } ORDER BY ASC(?name)";
+    let q = "SELECT DISTINCT * WHERE { ?s a rset:LinkedTool. ?s rset:name ?name. ?s rset:description ?description. ?s rset:dateOfEntry ?date. ?s rset:entryLevel ?level. ?s rset:consumesLOD ?consumes. ?s rset:producesLOD ?produces. OPTIONAL { ?s rset:inputFormat ?input. } OPTIONAL { ?s rset:outputFormat ?output. } ?s rset:wikidataid ?id. OPTIONAL { ?s rset:link ?link. } } ORDER BY ASC(?name)";
     TS.query(q, setData);
 });

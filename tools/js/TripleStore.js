@@ -27,20 +27,23 @@ TS.query = (sparql, callback) => {
                 } catch (e) {}
                 var vars = response.head.vars;
                 var bindings = response.results.bindings;
+                console.log(bindings);
                 const bindings_copy = Object.assign({}, bindings);
                 for (var item in bindings) {
                     for (var varstr in vars) {
                         var tblTxt = "";
-                        if (bindings[item][vars[varstr]].type === "uri") {
-                            var val = bindings[item][vars[varstr]].value;
-                            val = val.replace("http://rsetools.squirrel.link#", "");
-                            bindings_copy[item][vars[varstr]].value = val;
-                        } else if (bindings[item][vars[varstr]]["xml:lang"]) {
-                            //bindings_copy[item][vars[varstr]].value = bindings[item][vars[varstr]].value + "@" + bindings[item][vars[varstr]]["xml:lang"];
-                        } else if (bindings[item][vars[varstr]].type === "bnode") {
-                            bindings_copy[item][vars[varstr]].value = "_:" + bindings[item][vars[varstr]].value;
-                        } else {
-                            bindings_copy[item][vars[varstr]].value = bindings[item][vars[varstr]].value
+                        if (typeof bindings[item][vars[varstr]] !== "undefined") {
+                            if (bindings[item][vars[varstr]].type === "uri") {
+                                var val = bindings[item][vars[varstr]].value;
+                                val = val.replace("http://rsetools.squirrel.link#", "");
+                                bindings_copy[item][vars[varstr]].value = val;
+                            } else if (bindings[item][vars[varstr]]["xml:lang"]) {
+                                //bindings_copy[item][vars[varstr]].value = bindings[item][vars[varstr]].value + "@" + bindings[item][vars[varstr]]["xml:lang"];
+                            } else if (bindings[item][vars[varstr]].type === "bnode") {
+                                bindings_copy[item][vars[varstr]].value = "_:" + bindings[item][vars[varstr]].value;
+                            } else {
+                                bindings_copy[item][vars[varstr]].value = bindings[item][vars[varstr]].value
+                            }
                         }
                     }
                 }
@@ -69,9 +72,15 @@ TS.query = (sparql, callback) => {
                             obj.consumes = bindings[item]['consumes'].value;
                             obj.produces = bindings[item]['produces'].value;
                             obj.id = bindings[item]['id'].value;
-                            obj.url = "http://www.wikidata.org/entity/" + bindings[item]['id'].value;
-                            arrIn.push(bindings[item]['input'].value);
-                            arrOut.push(bindings[item]['output'].value);
+                            if (typeof bindings[item]['id'] !== "undefined") {
+                                obj.url = "http://www.wikidata.org/entity/" + bindings[item]['id'].value;
+                            }
+                            if (typeof bindings[item]['input'] !== "undefined") {
+                                arrIn.push(bindings[item]['input'].value);
+                            }
+                            if (typeof bindings[item]['output'] !== "undefined") {
+                                arrOut.push(bindings[item]['output'].value);
+                            }
                             arrLinks.push("<br>" + bindings[item]['link'].value);
                         }
                     }
