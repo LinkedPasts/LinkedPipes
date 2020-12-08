@@ -16,6 +16,7 @@ tool:JDAH36PP a rset:Tool .
 tool:JDAH36PP a rset:LinkedTool .
 tool:JDAH36PP owl:sameAs wd:Q74004218.
 tool:JDAH36PP rset:name 'Alligator'.
+tool:JDAH36PP rdfs:label 'Alligator'.
 tool:JDAH36PP rset:wikidataid 'Q74004218'.
 tool:JDAH36PP rset:description 'Web app for transforming a correspondence analyses with fixed and floating time intervals to a relative chronology and RDF representation using Allens interval algebra.'.
 tool:JDAH36PP rset:dateOfEntry '2019-11-13 8:50:6'.
@@ -34,6 +35,7 @@ tool:H9ASQQT5 a rset:Tool .
 tool:H9ASQQT5 a rset:LinkedTool .
 tool:H9ASQQT5 owl:sameAs wd:Q74003194.
 tool:H9ASQQT5 rset:name 'Academic Meta Tool'.
+tool:H9ASQQT5 rdfs:label 'Academic Meta Tool'.
 tool:H9ASQQT5 rset:wikidataid 'Q74003194'.
 tool:H9ASQQT5 rset:description 'Webapp for modelling vagueness in graphs including reasoning.'.
 tool:H9ASQQT5 rset:dateOfEntry '2019-11-13 8:51:29'.
@@ -52,6 +54,7 @@ tool:IV2WF71Z a rset:Tool .
 tool:IV2WF71Z a rset:LinkedTool .
 tool:IV2WF71Z owl:sameAs wd:Q74005133.
 tool:IV2WF71Z rset:name 'SPARQLing Unicorn QGIS Plugin'.
+tool:IV2WF71Z rdfs:label 'SPARQLing Unicorn QGIS Plugin'.
 tool:IV2WF71Z rset:wikidataid 'Q74005133'.
 tool:IV2WF71Z rset:description 'Plugin to add a layer in QGIS from Linked Data SPARQL endpoints.'.
 tool:IV2WF71Z rset:dateOfEntry '2019-11-13 8:52:34'.
@@ -69,6 +72,7 @@ tool:MS8B972N a rset:Tool .
 tool:MS8B972N a rset:LinkedTool .
 tool:MS8B972N owl:sameAs wd:Q74526175.
 tool:MS8B972N rset:name 'xTriples'.
+tool:MS8B972N rdfs:label 'xTriples'.
 tool:MS8B972N rset:wikidataid 'Q74526175'.
 tool:MS8B972N rset:description 'Web services for extracting RDF from XML'.
 tool:MS8B972N rset:dateOfEntry '2019-11-13 8:53:42'.
@@ -88,6 +92,7 @@ tool:7FGCEY65 a rset:Tool .
 tool:7FGCEY65 a rset:LinkedTool .
 tool:7FGCEY65 owl:sameAs wd:Q74692524.
 tool:7FGCEY65 rset:name 'Recogito'.
+tool:7FGCEY65 rdfs:label 'Recogito'.
 tool:7FGCEY65 rset:wikidataid 'Q74692524'.
 tool:7FGCEY65 rset:description 'Semantic Annotation tool for texts and images, developed by Pelagios Commons'.
 tool:7FGCEY65 rset:dateOfEntry '2019-11-13 8:54:52'.
@@ -108,6 +113,7 @@ tool:SB8L1WQU a rset:Tool .
 tool:SB8L1WQU a rset:LinkedTool .
 tool:SB8L1WQU owl:sameAs wd:Q74693165.
 tool:SB8L1WQU rset:name 'Peripleo'.
+tool:SB8L1WQU rdfs:label 'Peripleo'.
 tool:SB8L1WQU rset:wikidataid 'Q74693165'.
 tool:SB8L1WQU rset:description 'Peripleo is a search engine to data maintained by partners of Pelagios Commons, a Digital Humanities initative aiming to foster better linkages between online resources documenting the past.'.
 tool:SB8L1WQU rset:dateOfEntry '2019-11-13 8:55:44'.
@@ -124,6 +130,7 @@ tool:822URG1I a rset:Tool .
 tool:822URG1I a rset:LinkedTool .
 tool:822URG1I owl:sameAs wd:Q286306.
 tool:822URG1I rset:name 'cURL'.
+tool:822URG1I rdfs:label 'cURL'.
 tool:822URG1I rset:wikidataid 'Q286306'.
 tool:822URG1I rset:description 'free file transfer software'.
 tool:822URG1I rset:dateOfEntry '2019-11-13 8:56:31'.
@@ -139,6 +146,7 @@ tool:RGEZWA2Z a rset:Tool .
 tool:RGEZWA2Z a rset:LinkedTool .
 tool:RGEZWA2Z owl:sameAs wd:Q74696020.
 tool:RGEZWA2Z rset:name 'WikidataQueryServiceR'.
+tool:RGEZWA2Z rdfs:label 'WikidataQueryServiceR'.
 tool:RGEZWA2Z rset:wikidataid 'Q74696020'.
 tool:RGEZWA2Z rset:description 'API Client Library for Wikidata Query Service'.
 tool:RGEZWA2Z rset:dateOfEntry '2019-11-13 8:57:24'.
@@ -156,6 +164,7 @@ tool:ZVX3UYLY a rset:Tool .
 tool:ZVX3UYLY a rset:LinkedTool .
 tool:ZVX3UYLY owl:sameAs wd:Q74697234.
 tool:ZVX3UYLY rset:name 'SPARQLWrapper'.
+tool:ZVX3UYLY rdfs:label 'SPARQLWrapper'.
 tool:ZVX3UYLY rset:wikidataid 'Q74697234'.
 tool:ZVX3UYLY rset:description 'SPARQLWrapper is a simple Python wrapper around a SPARQL service to remotelly execute your queries. It helps in creating the query invokation and, possibly, convert the result into a more manageable format.'.
 tool:ZVX3UYLY rset:dateOfEntry '2019-11-13 8:58:17'.
@@ -171,6 +180,7 @@ tool:ZVX3UYLY rset:outputFormat rset:RDF-XML.
 # Relative Chronology Pipe
 pipe:E4TQIM9U a rset:Pipe .
 pipe:E4TQIM9U rset:name 'Relative Chronology Pipe'.
+pipe:E4TQIM9U rdfs:label 'Relative Chronology Pipe'.
 pipe:E4TQIM9U rset:description 'Pipe to create a relative chronology with time reasoning.'.
 pipe:E4TQIM9U rset:author 'Florian Thiery, Allard Mees'.
 pipe:E4TQIM9U rset:dateOfEntry '2019-11-13 8:59:18'.
@@ -196,8 +206,9 @@ tool:F2ADFAVY a rset:Tool .
 tool:F2ADFAVY a rset:LinkedTool .
 tool:F2ADFAVY owl:sameAs wd:Q22094624.
 tool:F2ADFAVY rset:name 'Trismegistos'.
+tool:F2ADFAVY rdfs:label 'Trismegistos'.
 tool:F2ADFAVY rset:wikidataid 'Q22094624'.
-tool:F2ADFAVY rset:description '  An interdisciplinary portal of the ancient world'.
+tool:F2ADFAVY rset:description 'An interdisciplinary portal of the ancient world'.
 tool:F2ADFAVY rset:dateOfEntry '2019-12-13 12:22:08'.
 tool:F2ADFAVY rset:link <https://www.trismegistos.org>.
 tool:F2ADFAVY rset:entryLevel rset:advanced.
