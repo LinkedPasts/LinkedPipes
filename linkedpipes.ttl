@@ -207,3 +207,18 @@ tool:F2ADFAVY rset:outputFormat rset:CSV.
 tool:F2ADFAVY rset:outputFormat rset:GEOJSON.
 tool:F2ADFAVY rset:outputFormat rset:JSON-LD.
 tool:F2ADFAVY rset:outputFormat rset:RDF-XML.
+
+# DeezyMatch
+tool:HNBYTU9N a rset:Tool .
+tool:HNBYTU9N a rset:LinkedTool .
+tool:HNBYTU9N owl:sameAs wd:Q104032568.
+tool:HNBYTU9N rset:name 'DeezyMatch'.
+tool:HNBYTU9N rset:wikidataid 'Q104032568'.
+tool:HNBYTU9N rset:description 'A flexible deep neural network approach to fuzzy string matching and candidate ranking'.
+tool:HNBYTU9N rset:dateOfEntry '2020-12-8 17:56:7'.
+tool:HNBYTU9N rset:link <https://github.com/Living-with-machines/DeezyMatch>.
+tool:HNBYTU9N rset:link <https://www.aclweb.org/anthology/2020.emnlp-demos.9/>.
+tool:HNBYTU9N rset:link <https://living-with-machines.github.io/DeezyMatch/>.
+tool:HNBYTU9N rset:entryLevel rset:beginner.
+tool:HNBYTU9N rset:consumesLOD 'false'.
+tool:HNBYTU9N rset:producesLOD 'false'.
