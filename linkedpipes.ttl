@@ -234,3 +234,23 @@ tool:HNBYTU9N rset:link <https://living-with-machines.github.io/DeezyMatch/>.
 tool:HNBYTU9N rset:entryLevel rset:beginner.
 tool:HNBYTU9N rset:consumesLOD 'false'.
 tool:HNBYTU9N rset:producesLOD 'false'.
+
+# World Historical Gazetteer
+tool:TDTMH4I3 a rset:Tool .
+tool:TDTMH4I3 a rset:LinkedTool .
+tool:TDTMH4I3 owl:sameAs wd:Q104041123.
+tool:TDTMH4I3 rset:name 'World Historical Gazetteer'.
+tool:TDTMH4I3 rdfs:label 'World Historical Gazetteer'.
+tool:TDTMH4I3 rset:wikidataid 'Q104041123'.
+tool:TDTMH4I3 rset:description 'Web platform aggregating contributed datasets of historical places and providing reconciliation services'.
+tool:TDTMH4I3 rset:dateOfEntry '2020-12-8 16:39:27'.
+tool:TDTMH4I3 rset:link <http://whgazetteer.org>.
+tool:TDTMH4I3 rset:link <http://blog.whgazetteer.org>.
+tool:TDTMH4I3 rset:entryLevel rset:beginner.
+tool:TDTMH4I3 rset:consumesLOD 'true'.
+tool:TDTMH4I3 rset:producesLOD 'true'.
+tool:TDTMH4I3 rset:inputFormat rset:JSON-LD.
+tool:TDTMH4I3 rset:inputFormat rset:CSV.
+tool:TDTMH4I3 rset:inputFormat rset:unknownFormat.
+tool:TDTMH4I3 rset:outputFormat rset:JSON-LD.
+tool:TDTMH4I3 rset:outputFormat rset:CSV.
