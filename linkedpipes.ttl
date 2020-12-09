@@ -235,13 +235,6 @@ tool:HNBYTU9N rset:entryLevel rset:beginner.
 tool:HNBYTU9N rset:consumesLOD 'false'.
 tool:HNBYTU9N rset:producesLOD 'false'.
 
-@prefix rset: <http://rsetools.squirrel.link#> .
-@prefix tool: <http://lod.linkedpipes.xyz/data/tool/> .
-@prefix pipe: <http://lod.linkedpipes.xyz/data/pipe/> .
-@prefix wd: <http://www.wikidata.org/entity/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-
 # World Historical Gazetteer
 tool:TDTMH4I3 a rset:Tool .
 tool:TDTMH4I3 a rset:LinkedTool .
