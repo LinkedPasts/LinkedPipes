@@ -254,3 +254,29 @@ tool:TDTMH4I3 rset:inputFormat rset:CSV.
 tool:TDTMH4I3 rset:inputFormat rset:unknownFormat.
 tool:TDTMH4I3 rset:outputFormat rset:JSON-LD.
 tool:TDTMH4I3 rset:outputFormat rset:CSV.
+
+#
+@prefix rset: <http://rsetools.squirrel.link#> .
+@prefix tool: <http://lod.linkedpipes.xyz/data/tool/> .
+@prefix pipe: <http://lod.linkedpipes.xyz/data/pipe/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+# Library MARC Bounding Box
+tool:Z7KB55H9 a rset:Tool .
+tool:Z7KB55H9 a rset:LinkedTool .
+tool:Z7KB55H9 owl:sameAs wd:Q104213255.
+tool:Z7KB55H9 rset:name 'Library MARC Bounding Box'.
+tool:Z7KB55H9 rdfs:label 'Library MARC Bounding Box'.
+tool:Z7KB55H9 rset:wikidataid 'Q104213255'.
+tool:Z7KB55H9 rset:description 'Python script to open a file system of vector and raster GIS data, find the extent and output this into a spreadsheet in a format suitable for Marc cataloguing.'.
+tool:Z7KB55H9 rset:dateOfEntry '2020-12-16 16:15:16'.
+tool:Z7KB55H9 rset:link <https://github.com/thegsi/LD_bounding_box>.
+tool:Z7KB55H9 rset:entryLevel rset:advanced.
+tool:Z7KB55H9 rset:consumesLOD 'false'.
+tool:Z7KB55H9 rset:producesLOD 'false'.
+tool:Z7KB55H9 rset:inputFormat rset:SHP.
+tool:Z7KB55H9 rset:inputFormat rset:TIFF.
+tool:Z7KB55H9 rset:inputFormat rset:GEOJSON.
+tool:Z7KB55H9 rset:outputFormat rset:CSV.
