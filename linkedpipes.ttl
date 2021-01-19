@@ -281,13 +281,6 @@ tool:Z7KB55H9 rset:inputFormat rset:TIFF.
 tool:Z7KB55H9 rset:inputFormat rset:GEOJSON.
 tool:Z7KB55H9 rset:outputFormat rset:CSV.
 
-@prefix rset: <http://rsetools.squirrel.link#> .
-@prefix tool: <http://lod.linkedpipes.xyz/data/tool/> .
-@prefix pipe: <http://lod.linkedpipes.xyz/data/pipe/> .
-@prefix wd: <http://www.wikidata.org/entity/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-
 # Heritage Connector
 tool:IGUCKSV3 a rset:Tool .
 tool:IGUCKSV3 a rset:LinkedTool .
@@ -304,3 +297,5 @@ tool:IGUCKSV3 rset:consumesLOD 'true'.
 tool:IGUCKSV3 rset:producesLOD 'true'.
 tool:IGUCKSV3 rset:outputFormat rset:JSON-LD.
 tool:IGUCKSV3 rset:outputFormat rset:N3.
+
+
