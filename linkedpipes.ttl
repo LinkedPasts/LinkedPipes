@@ -280,3 +280,27 @@ tool:Z7KB55H9 rset:inputFormat rset:SHP.
 tool:Z7KB55H9 rset:inputFormat rset:TIFF.
 tool:Z7KB55H9 rset:inputFormat rset:GEOJSON.
 tool:Z7KB55H9 rset:outputFormat rset:CSV.
+
+@prefix rset: <http://rsetools.squirrel.link#> .
+@prefix tool: <http://lod.linkedpipes.xyz/data/tool/> .
+@prefix pipe: <http://lod.linkedpipes.xyz/data/pipe/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+# Heritage Connector
+tool:IGUCKSV3 a rset:Tool .
+tool:IGUCKSV3 a rset:LinkedTool .
+tool:IGUCKSV3 owl:sameAs wd:Q104904282.
+tool:IGUCKSV3 rset:name 'Heritage Connector'.
+tool:IGUCKSV3 rdfs:label 'Heritage Connector'.
+tool:IGUCKSV3 rset:wikidataid 'Q104904282'.
+tool:IGUCKSV3 rset:description 'A software toolkit to transform GLAM collections and text within them into knowledge graphs, to extract meaning and make connections.'.
+tool:IGUCKSV3 rset:dateOfEntry '2021-1-19 16:49:25'.
+tool:IGUCKSV3 rset:link <https://github.com/TheScienceMuseum/heritage-connector>.
+tool:IGUCKSV3 rset:link <https://github.com/TheScienceMuseum/heritage-connector-nlp>.
+tool:IGUCKSV3 rset:entryLevel rset:beginner.
+tool:IGUCKSV3 rset:consumesLOD 'true'.
+tool:IGUCKSV3 rset:producesLOD 'true'.
+tool:IGUCKSV3 rset:outputFormat rset:JSON-LD.
+tool:IGUCKSV3 rset:outputFormat rset:N3.
