@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/dfd#"
+     xml:base="https://w3id.org/dfd"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://w3id.org/dfd">
+        <owl:versionIRI rdf:resource="https://w3id.org/dfd/1.0.0"/>
+        <dc:creator>Christophe Debruyne</dc:creator>
+        <dc:description>An ontology for Data Flow (Diagrams).</dc:description>
+        <dc:title>Data Flow Ontology</dc:title>
+        <terms:abstract>An ontology for Data Flow (Diagrams).</terms:abstract>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-11-01</terms:created>
+        <terms:license rdf:datatype="https://w3.org/2001/XMLSchema#anyURI">http://creativecommons.org/licenses/by/4.0/</terms:license>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/dfd#from -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/dfd#from">
+        <rdfs:domain rdf:resource="https://w3id.org/dfd#DataFlow"/>
+        <rdfs:range rdf:resource="https://w3id.org/dfd#Entity"/>
+        <rdfs:comment>A property to link a data flow to its origin.</rdfs:comment>
+        <rdfs:label xml:lang="en">from entity</rdfs:label>
+        <rdfs:label>from entity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/dfd#subProcessOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/dfd#subProcessOf">
+        <rdfs:domain rdf:resource="https://w3id.org/dfd#Process"/>
+        <rdfs:range rdf:resource="https://w3id.org/dfd#Process"/>
+        <rdfs:comment>A property to indicate that a process is part of another process. This predicate is used when functionality decomposing a process into smaller processes.</rdfs:comment>
+        <rdfs:label xml:lang="en">subprocess of</rdfs:label>
+        <rdfs:label>subprocess of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/dfd#to -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/dfd#to">
+        <rdfs:domain rdf:resource="https://w3id.org/dfd#DataFlow"/>
+        <rdfs:range rdf:resource="https://w3id.org/dfd#Entity"/>
+        <rdfs:comment>A property to link a data flow to its destination.</rdfs:comment>
+        <rdfs:label xml:lang="en">to entity</rdfs:label>
+        <rdfs:label>to entity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/dfd#DataFlow -->
+
+
+    <owl:Class rdf:about="https://w3id.org/dfd#DataFlow">
+        <rdfs:comment>A data flow can be best understood as data in motion, moving from one place in a system to another. A data flow is data that move together, so it can be composed of many individual pieces of data that are generated at the same time and that flow together to common destinations. (Source: J. A. Hoffer, J. F. George, and J. S. Valacich, “Modern Systems Analysis and Design,” Development, 2002) Examples of data include: data on a form or a report; results of a query to a database; or data entered in a computer.</rdfs:comment>
+        <rdfs:label xml:lang="en">Data Flow</rdfs:label>
+        <rdfs:label>Data Flow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/dfd#DataStore -->
+
+
+    <owl:Class rdf:about="https://w3id.org/dfd#DataStore">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/dfd#Entity"/>
+        <rdfs:comment>Data at rest, which may take the form of many different physical representations. A data store may represent one of many different physical locations for data; for example, a file folder, one or more computer-based file(s), or a notebook. (Source: J. A. Hoffer, J. F. George, and J. S. Valacich, “Modern Systems Analysis and Design,” Development, 2002)</rdfs:comment>
+        <rdfs:label xml:lang="en">Data Store</rdfs:label>
+        <rdfs:label>Data Store</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/dfd#Entity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/dfd#Entity">
+        <rdfs:comment>Entities is an abstract concept for representing the targets and sources of data flows.</rdfs:comment>
+        <rdfs:label xml:lang="en">Entity</rdfs:label>
+        <rdfs:label>Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/dfd#Interface -->
+
+
+    <owl:Class rdf:about="https://w3id.org/dfd#Interface">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/dfd#Entity"/>
+        <rdfs:comment>The origin and/or destination of data; sometimes referred to as external entities. (Source: J. A. Hoffer, J. F. George, and J. S. Valacich, “Modern Systems Analysis and Design,” Development, 2002)</rdfs:comment>
+        <rdfs:label xml:lang="en">Interface</rdfs:label>
+        <rdfs:label>Interface</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/dfd#Process -->
+
+
+    <owl:Class rdf:about="https://w3id.org/dfd#Process">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/dfd#Entity"/>
+        <rdfs:comment>The work or actions performed on data so that they are transformed, stored, or distributed. (Source: J. A. Hoffer, J. F. George, and J. S. Valacich, “Modern Systems Analysis and Design,” Development, 2002)</rdfs:comment>
+        <rdfs:label xml:lang="en">Process</rdfs:label>
+        <rdfs:label>Process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/dfd#DataFlow"/>
+            <rdf:Description rdf:about="https://w3id.org/dfd#DataStore"/>
+            <rdf:Description rdf:about="https://w3id.org/dfd#Interface"/>
+            <rdf:Description rdf:about="https://w3id.org/dfd#Process"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.7) https://github.com/owlcs/owlapi/ -->
+
+
