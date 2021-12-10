@@ -1,0 +1,319 @@
+<html>
+<head>
+        <style type="text/css">
+          .end-element { fill : #FFCCFF; }
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/rdflib@2.2.12/dist/rdflib.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="http://flowchart.js.org/flowchart-latest.js"></script>
+        <!-- <script src="../release/flowchart.min.js"></script> -->
+        <script>
+		
+		var sample=`@prefix : <http://www.semanticweb.org/timohomburg/ontologies/2021/11/untitled-ontology-31#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/timohomburg/ontologies/2021/11/untitled-ontology-31> .
+
+<http://www.semanticweb.org/timohomburg/ontologies/2021/11/untitled-ontology-31> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/timohomburg/ontologies/2021/11/untitled-ontology-31#members
+:members rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/timohomburg/ontologies/2021/11/untitled-ontology-31#partOf
+:partOf rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/dfd/1.0.0/fromEntity
+<https://w3id.org/dfd/1.0.0/fromEntity> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/dfd/1.0.0/toEntity
+<https://w3id.org/dfd/1.0.0/toEntity> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/timohomburg/ontologies/2021/11/untitled-ontology-31#pipeindex
+:pipeindex rdf:type owl:DatatypeProperty ;
+           rdfs:domain :LinkedPipe ;
+           rdfs:range xsd:int .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/timohomburg/ontologies/2021/11/untitled-ontology-31#CSVDataStore
+:CSVDataStore rdf:type owl:Class ;
+              rdfs:subClassOf <https://w3id.org/dfd/1.0.0/DataStore> .
+
+
+###  http://www.semanticweb.org/timohomburg/ontologies/2021/11/untitled-ontology-31#LinkedPipe
+:LinkedPipe rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/timohomburg/ontologies/2021/11/untitled-ontology-31#Script
+:Script rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> .
+
+
+###  http://www.w3.org/ns/prov#Activity
+<http://www.w3.org/ns/prov#Activity> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Agent
+<http://www.w3.org/ns/prov#Agent> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Entity
+<http://www.w3.org/ns/prov#Entity> rdf:type owl:Class .
+
+
+###  https://w3id.org/dfd/1.0.0/DataStore
+<https://w3id.org/dfd/1.0.0/DataStore> rdf:type owl:Class ;
+                                       rdfs:subClassOf <https://w3id.org/dfd/1.0.0/Entity> .
+
+
+###  https://w3id.org/dfd/1.0.0/Entity
+<https://w3id.org/dfd/1.0.0/Entity> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/timohomburg/ontologies/2021/11/untitled-ontology-31#csv_to_postgres
+:csv_to_postgres rdf:type owl:NamedIndividual ,
+                          :Script ;
+                 :partOf :oghampipe ;
+                 <https://w3id.org/dfd/1.0.0/fromEntity> :oghamcsv ;
+                 <https://w3id.org/dfd/1.0.0/toEntity> :oghampostgres ;
+                 :pipeindex 0 .
+
+
+###  http://www.semanticweb.org/timohomburg/ontologies/2021/11/untitled-ontology-31#oghamcsv
+:oghamcsv rdf:type owl:NamedIndividual ,
+                   :CSVDataStore .
+
+
+###  http://www.semanticweb.org/timohomburg/ontologies/2021/11/untitled-ontology-31#oghampipe
+:oghampipe rdf:type owl:NamedIndividual ,
+                    :LinkedPipe ;
+           rdfs:label "Ogham Pipe"@en .
+
+
+###  http://www.semanticweb.org/timohomburg/ontologies/2021/11/untitled-ontology-31#oghampostgres
+:oghampostgres rdf:type owl:NamedIndividual ,
+                        <https://w3id.org/dfd/1.0.0/DataStore> .
+
+
+###  http://www.semanticweb.org/timohomburg/ontologies/2021/11/untitled-ontology-31#oghamrdf
+:oghamrdf rdf:type owl:NamedIndividual ,
+                   <https://w3id.org/dfd/1.0.0/DataStore> .
+
+
+###  http://www.semanticweb.org/timohomburg/ontologies/2021/11/untitled-ontology-31#postgres_to_rdf
+:postgres_to_rdf rdf:type owl:NamedIndividual ,
+                          :Script ;
+                 :partOf :oghampipe ;
+                 <https://w3id.org/dfd/1.0.0/fromEntity> :oghampostgres ;
+                 <https://w3id.org/dfd/1.0.0/toEntity> :oghamrdf ;
+                 :pipeindex 1 .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+`
+            function codeToRDF(){
+            
+            }
+        
+            function rdfToCode(pipeline,graph){
+				resultnodes=""
+				resultedges=""
+				pipelinemap={}
+				for(item of pipeline){
+					pipelinemap[item.object.value]=item.subject.value
+				}
+				lastsub=""
+				lastlabel=""
+				first=true
+				for(item in pipelinemap){
+					if(first){
+						first=false
+						if(pipelinemap[item].includes("#")){
+							resultnodes+=pipelinemap[item].substring(pipelinemap[item].lastIndexOf('#')+1)+"=>condition:"
+						}else{
+							resultnodes+=pipelinemap[item].substring(pipelinemap[item].lastIndexOf('/')+1)
+						}
+					}else{
+						if(pipelinemap[item].includes("#")){
+							resultedges+=lastlabel+"->"+pipelinemap[item].substring(pipelinemap[item].lastIndexOf('#')+1)+"\n"
+							resultnodes+=pipelinemap[item].substring(pipelinemap[item].lastIndexOf('#')+1)
+						}else{
+							resultedges+=lastlabel+"->"+pipelinemap[item].substring(pipelinemap[item].lastIndexOf('/')+1)+"\n"
+							resultnodes+=pipelinemap[item].substring(pipelinemap[item].lastIndexOf('/')+1)
+						}
+					}
+					if(pipelinemap[item].includes("#")){
+						resultnodes+="=>condition: "+pipelinemap[item].substring(pipelinemap[item].lastIndexOf('#')+1)+":>"+pipelinemap[item]+"\n"
+					}else{
+						resultnodes+="=>condition: "+pipelinemap[item].substring(pipelinemap[item].lastIndexOf('/')+1)+":>"+pipelinemap[item]+"\n"
+					}
+					lastsub=pipelinemap[item]
+					if(pipelinemap[item].includes("#")){
+						lastlabel=pipelinemap[item].substring(pipelinemap[item].lastIndexOf('#')+1)
+					}else{
+						lastlabel=pipelinemap[item].substring(pipelinemap[item].lastIndexOf('/')+1)
+					}
+				}
+				console.log(resultnodes+"\n\n"+resultedges)
+            }
+        
+            let doc = $rdf.sym("https://example.com/dfdexample/ogham");
+            const store=$rdf.graph()
+            $rdf.parse(sample, store, doc.uri, "text/turtle");
+			var pipeline = store.statementsMatching(undefined, $rdf.sym("http://www.semanticweb.org/timohomburg/ontologies/2021/11/untitled-ontology-31#pipeindex"), undefined) 
+			console.log(pipeline)
+			rdfToCode(pipeline,store)
+            window.onload = function () {
+                var btn = document.getElementById("run"),
+                    cd = document.getElementById("code"),
+                    chart;
+
+                (btn.onclick = function () {
+                    var code = cd.value;
+
+                    if (chart) {
+                      chart.clean();
+                    }
+
+                    chart = flowchart.parse(code);
+                    chart.drawSVG('canvas', {
+                      // 'x': 30,
+                      // 'y': 50,
+                      'line-width': 3,
+                      'maxWidth': 3,//ensures the flowcharts fits within a certian width
+                      'line-length': 50,
+                      'text-margin': 10,
+                      'font-size': 14,
+                      'font': 'normal',
+                      'font-family': 'Helvetica',
+                      'font-weight': 'normal',
+                      'font-color': 'black',
+                      'line-color': 'black',
+                      'element-color': 'black',
+                      'fill': 'white',
+                      'yes-text': 'yes',
+                      'no-text': 'no',
+                      'arrow-end': 'block',
+                      'scale': 1,
+                      'symbols': {
+                        'start': {
+                          'font-color': 'red',
+                          'element-color': 'green',
+                          'fill': 'yellow'
+                        },
+                        'end':{
+                          'class': 'end-element'
+                        }
+                      },
+                      'flowstate' : {
+                        'past' : { 'fill' : '#CCCCCC', 'font-size' : 12},
+                        'current' : {'fill' : 'yellow', 'font-color' : 'red', 'font-weight' : 'bold'},
+                        'future' : { 'fill' : '#FFFF99'},
+                        'request' : { 'fill' : 'blue'},
+                        'invalid': {'fill' : '#444444'},
+                        'approved' : { 'fill' : '#58C4A3', 'font-size' : 12, 'yes-text' : 'APPROVED', 'no-text' : 'n/a' },
+                        'rejected' : { 'fill' : '#C45879', 'font-size' : 12, 'yes-text' : 'n/a', 'no-text' : 'REJECTED' }
+                      }
+                    });
+
+                    $('[id^=sub1]').click(function(){
+                      alert('info here');
+                    });
+                })();
+
+            };
+            </script>
+</head>
+<body>
+        <div><textarea id="code" style="width: 100%;" rows="11">
+csv=>subroutine: Jules_Vernes_Five_Weeks_in_a_balloon.txt:>https://www.gutenberg.org/cache/epub/3526/pg3526-images.html#link2HCH0001
+recogitods=>subroutine: Recogito Dataset
+geojson=>subroutine: GeoJSON
+qgislayer=>subroutine: QGIS Vector Layer
+qgismap=>subroutine: Map PDF
+qgislayerenriched=>subroutine: Enriched QGIS Vector Layer
+annotatedrecogitods=>subroutine: Annotated Recogito Dataset
+recogito=>inputoutput: Recogito (Q74692524):>https://www.wikidata.org/entity/Q74692524
+recogitoannotator=>inputoutput: Recogito Annotation tool:>https://github.com/recogito/recogito-js
+recogitoexporter=>inputoutput: Recogito Exporter
+qgistool=>inputoutput: QGIS 3.18 (Q1329181):>https://www.wikidata.org/entity/Q1329181
+qgisprintcomposer=>inputoutput: QGIS 3.18 Print Composer
+sparqlunicorntool=>inputoutput: SPARQLing Unicorn QGIS Plugin 0.12 (Q71937877):>https://www.wikidata.org/entity/Q71937877
+
+
+csv->recogito(right)->recogitods->recogitoannotator(left)->annotatedrecogitods->recogitoexporter(right)->geojson(right)->qgistool->qgislayer(left)->sparqlunicorntool->qgislayerenriched(right)->qgisprintcomposer(right)->qgismap
+
+</textarea></div>
+        <div><button id="run" type="button">Run</button></div>
+        <div id="canvas" style="width:100%"></div>
+<div id="diagram" style="width:100%"></div>
+<script>
+  var diagram = flowchart.parse("st=>start: Start|past:>http://www.google.com[blank] e=>end: End|future:>http://www.google.com op1=>operation: My Operation|past op2=>operation: Stuff|current sub1=>subroutine: My Subroutine|invalid cond=>condition: Yes or No?|approved:>http://www.google.com c2=>condition: Good idea|rejected io=>inputoutput: catch something...|future st->op1(right)->cond cond(yes, right)->c2 cond(no)->sub1(left)->op1 c2(yes)->io->e c2(no)->op2->e");
+  diagram.drawSVG('diagram');
+
+  // you can also try to pass options:
+
+  /*diagram.drawSVG('diagram', {
+                              'x': 0,
+                              'y': 0,
+                              'line-width': 3,
+                              'line-length': 50,
+                              'text-margin': 10,
+                              'font-size': 14,
+                              'font-color': 'black',
+                              'line-color': 'black',
+                              'element-color': 'black',
+                              'fill': 'white',
+                              'yes-text': 'yes',
+                              'no-text': 'no',
+                              'arrow-end': 'block',
+                              'scale': 1,
+                              // style symbol types
+                              'symbols': {
+                                'start': {
+                                  'font-color': 'red',
+                                  'element-color': 'green',
+                                  'fill': 'yellow'
+                                },
+                                'end':{
+                                  'class': 'end-element'
+                                }
+                              },
+                              // even flowstate support ;-)
+                              'flowstate' : {
+                                'past' : { 'fill' : '#CCCCCC', 'font-size' : 12},
+                                'current' : {'fill' : 'yellow', 'font-color' : 'red', 'font-weight' : 'bold'},
+                                'future' : { 'fill' : '#FFFF99'},
+                                'request' : { 'fill' : 'blue'},
+                                'invalid': {'fill' : '#444444'},
+                                'approved' : { 'fill' : '#58C4A3', 'font-size' : 12, 'yes-text' : 'APPROVED', 'no-text' : 'n/a' },
+                                'rejected' : { 'fill' : '#C45879', 'font-size' : 12, 'yes-text' : 'n/a', 'no-text' : 'REJECTED' }
+                              }
+                            });*/
+</script>
+</body>
+</html>
