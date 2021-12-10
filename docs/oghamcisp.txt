@@ -1,0 +1,22 @@
+msaccess=>subroutine: CISP MS Access Database
+sqlfile=>subroutine: SQL File
+postgisdb=>subroutine: Ogham PostGIS Database
+rdf4jdb=>subroutine: RDF4J SPARQL Repository
+csv=>subroutine: Ogham CSV
+ttl=>subroutine: Ogham TTL
+sparqlresult=>subroutine: Ogham SPARQL Result
+qgisvectorlayer=>subroutine: QGIS Vector Layer
+images=>subroutine: Map Image (PNG)
+
+
+bullzip=>inputoutput: Bullzip
+pythonscript=>inputoutput: Python Script
+csvtopostgis=>inputoutput: SQL POSTGIS Import
+postgistocsv=>inputoutput: POSTGIS to CSV Export
+rdf4jimport=>inputoutput: RDF4J Import
+sparqlunicornqgisplugin=>inputoutput: SPARQLing Unicorn QGIS Plugin
+qgisprintcomposer=>inputoutput: QGIS Print Composer
+rdf4jsparqlendpoint=>inputoutput: RDF4J SPARQL Endpoint
+
+
+msaccess->bullzip->sqlfile(left)->csvtopostgis(bottom)->postgisdb(right)->postgistocsv(right)->csv(right)->pythonscript(right)->ttl(right)->rdf4jimport->rdf4jdb(left)->rdf4jsparqlendpoint->sparqlresult(right)->sparqlunicornqgisplugin(right)->qgisvectorlayer(right)->qgisprintcomposer(right)->images
