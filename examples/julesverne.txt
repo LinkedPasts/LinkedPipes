@@ -1,0 +1,16 @@
+csv=>subroutine: Jules_Vernes_Five_Weeks_in_a_balloon.txt:>https://www.gutenberg.org/cache/epub/3526/pg3526-images.html#link2HCH0001
+recogitods=>subroutine: Recogito Dataset
+geojson=>subroutine: GeoJSON
+qgislayer=>subroutine: QGIS Vector Layer
+qgismap=>subroutine: Map PDF
+qgislayerenriched=>subroutine: Enriched QGIS Vector Layer
+annotatedrecogitods=>subroutine: Annotated Recogito Dataset
+recogito=>inputoutput: Recogito (Q74692524):>https://www.wikidata.org/entity/Q74692524
+recogitoannotator=>inputoutput: Recogito Annotation tool:>https://github.com/recogito/recogito-js
+recogitoexporter=>inputoutput: Recogito Exporter
+qgistool=>inputoutput: QGIS 3.18 (Q1329181):>https://www.wikidata.org/entity/Q1329181
+qgisprintcomposer=>inputoutput: QGIS 3.18 Print Composer
+sparqlunicorntool=>inputoutput: SPARQLing Unicorn QGIS Plugin 0.12 (Q71937877):>https://www.wikidata.org/entity/Q71937877
+
+
+csv->recogito(right)->recogitods->recogitoannotator(left)->annotatedrecogitods->recogitoexporter(right)->geojson(right)->qgistool->qgislayer(left)->sparqlunicorntool->qgislayerenriched(right)->qgisprintcomposer(right)->qgismap
