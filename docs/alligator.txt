@@ -1,0 +1,18 @@
+statisticaldata=>subroutine: Statistical data (CSV):>:https://github.com/RGZM/alligator-mt-data/blob/master/v1/alligator_re_ca.csv
+alligatorfile=>subroutine: Alligator File:>https://github.com/RGZM/alligator-mt-data
+alligatorrdf=>subroutine: Alligator RDF:>https://github.com/RGZM/alligator-mt-data
+cypher=>subroutine: Cypher Dataset:>https://github.com/RGZM/alligator-mt-data/blob/master/v1/alligator_re_results_cypther.cql
+neo4jdb=>subroutine: Neo4J Database
+images=>subroutine: Screenshot of Graph (PNG)
+
+
+
+alligatorca=>inputoutput: Alligator-CA Coorespondance Analysis:>https://github.com/RGZM/alligator-mt-data/blob/master/v2/romanempire.agt
+alligator=>inputoutput: Alligator :>https://github.com/RGZM/alligator
+alligatortoamt=>inputoutput: Alligator To Amt
+amt=>inputoutput: Academic Meta Tool :>http://academic-meta-tool.xyz/
+neo4jimporter=>inputoutput: Neo4J Importer
+neo4jguifrontend=>inputoutput: Neo4J GUI Frontend Screenshot Tool
+
+
+statisticaldata->alligatorca->alligatorfile(right)->alligator->alligatorrdf(right)->amt(right)->cypher->neo4jimporter(right)->neo4jdb(right)->neo4jguifrontend(right)->images
