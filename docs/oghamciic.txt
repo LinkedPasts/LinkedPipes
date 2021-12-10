@@ -1,0 +1,16 @@
+book=>subroutine: CIIC Book by Macalister:>https://www.wikidata.org/wiki/Q70256237
+gcsv=>subroutine: CIIC Google Spreadsheet
+csv=>subroutine: CIIC CSV
+postgisogham=>subroutine: PostGIS Ogham Database
+csv2=>subroutine: PostGIS CSV
+images=>subroutine: Density Map Images (PNG)
+
+
+booktocsv=>inputoutput: Manual digitization process
+gcsvtocsv=>inputoutput: Google Spreadsheet to CSV Export
+csvtopostgis=>inputoutput: CSV to POSTGIS Import (for Enrichment and Data Cleaning)
+postgistocsv=>inputoutput: POSTGIS to CSV Export
+rscript=>inputoutput: R Script:>
+
+
+book->booktocsv->gcsv(right)->gcsvtocsv(right)->csv(right)->csvtopostgis(right)->postgisogham(right)->postgistocsv(right)->csv2->rscript->images
